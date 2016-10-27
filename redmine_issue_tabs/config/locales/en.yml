@@ -1,0 +1,7 @@
+# English strings go here for Rails i18n
+en:
+  label_issues_tab_history: "History"
+  label_issues_tab_comments: "Comments"
+  label_type_activity: '~Вид работы'
+  label_istab_spent_hours: '~Затраченное время'
+  label_istab_employee: '~Сотрудник'

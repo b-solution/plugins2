@@ -1,0 +1,58 @@
+#history > h3 {
+    display: none;
+}
+
+div.timelog {
+  overflow: auto;
+  display: block;
+}
+
+div.timelog h4 {
+  padding-top: 5px;
+}
+
+.timelog {
+  clear: left;
+}
+
+.timelog .spent_on {
+  padding-left: 40px;
+  font-size: 12pt;
+}
+.timelog .spent_on span {
+  padding-right: 10px;
+}
+
+#issue-changesets {
+  float: none;
+  width: 100%;
+  margin-left: 1em !important;
+  margin-bottom: 1em !important;
+  background: #fff !important;
+  padding-left: 1em !important;
+}
+
+#issue_timelog div.odd,
+#issue_timelog div.even {
+  padding: 2px 0;
+  line-height: 18px;
+}
+
+a.block-left-link {
+  display: block;
+  float: left;
+  margin-left: 5px;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+#issue_timelog_table{
+  width: 48%;
+  float: right;
+  margin-left: 10px;
+}
+#issue_timelog{
+  width: 50%;
+  float: left;
+}

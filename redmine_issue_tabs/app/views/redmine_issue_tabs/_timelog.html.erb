@@ -1,0 +1,56 @@
+<% if @time_entries.count > 0 %>
+  <div id="issue_timelog">
+    <% @time_entries.each do |entry| %>
+      <div id="timelog-<%= entry.id %>" class="<%= cycle('odd', 'even') %>">
+          <% if entry.editable_by?(User.current) -%>
+            <div class="R H">
+              <%= link_to '',
+                          {controller: 'timelog', action: 'edit', id: entry, project_id: nil},
+                          title: l(:button_edit),
+                          class: 'no_line icon icon-edit block-left-link' %>
+              <%= link_to '',
+                          {controller: 'timelog', action: 'destroy', id: entry, project_id: nil},
+                          confirm: l(:text_are_you_sure),
+                          method: :delete,
+                          title: l(:button_delete),
+                          class: 'no_line icon icon-del block-left-link' %>
+            </div>
+          <% end %>
+        <div>
+          <b>
+            <%= format_date entry.spent_on %>:
+            <%= l_hours entry.hours %></b> &mdash; <%= h(entry.activity.try(:name) || 'none') %>.
+            <%= authoring entry.created_on, entry.user %>
+        </div>
+        <div><%= h entry.comments %></div>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="issue_timelog_table">
+    <table class="list">
+      <thead>
+        <tr>
+            <th>
+              <%= l(:label_type_activity) %>
+            </th>
+            <th>
+              <%= l(:label_istab_employee) %>
+            </th>
+            <th>
+              <%= l(:label_istab_spent_hours) %>
+            </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @time_entries_for_table.each do |tet| %>
+            <tr>
+              <td><%= h(tet.activity.try(:name) || 'none') %></td>
+              <td><%= tet.user %></td>
+              <td><%= l_hours tet.hours_sum %> (<%= ((tet.hours_sum*100)/@issue.spent_hours).round(2) %> %) </td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
