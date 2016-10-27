@@ -1,0 +1,26 @@
+<%
+  puts "Loading orders..."
+
+  names = %w(CRM Invoices Helpdesk People Finance Questions)
+  codes = %w(001 002 003 004 005 006)
+  currencies = %w(USD EUR GBP RUB)
+  contacts = Contact.limit(rand(100) + 1).all
+  users = User.limit(rand(100) + 1).all
+  projects = EnabledModule.where(:name => 'orders').map(&:project).flatten
+
+  for i in (0 .. 20) do
+%>
+order_<%= i %>:
+  id          : <%= i + 1 %>
+  number      : <%= number = "SO-%04i" % i %>
+  subject     : <%= "Sales order for plugin #{names[rand(5)]}" %>
+  currency    : <%= currencies[rand(4)] %> # name has a limit of 64 characters.
+  author_id   : <%= users[rand(users.count)].id %>
+  contact_id  : <%= contacts[rand(contacts.count)].id %>
+  project_id  : <%= projects[rand(projects.count)].id %>
+  status_id   : <%= (rand(5) + 1) %>
+  order_date  : <%= created_at = (rand(60) + 2).days.ago + rand(600).minutes; created_at.to_s(:db) %>
+  created_at  : <%= created_at = (rand(60) + 2).days.ago + rand(600).minutes; created_at.to_s(:db) %>
+  updated_at  : <%= (created_at + rand(36_000).seconds).to_s(:db) %>
+  description : This is a order <%= number %> description
+<% end %>

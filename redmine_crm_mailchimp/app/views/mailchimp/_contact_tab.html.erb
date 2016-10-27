@@ -1,0 +1,21 @@
+<div id="mailchimp_tab" class="contact-tab">
+  <% if User.current.allowed_to?(:edit_mailchimp, @project) %>
+    <div class="contextual">
+      <%= link_to l(:button_add), 'javascript:void(0)', :class => 'icon icon-add', :id => 'show-add-to-list-form' %>
+    </div>
+  <% end %>
+
+  <h3><%= l(:label_mailchimp_lists) %></h3>
+  <div id='mailchimp-lists-placeholder'>
+    <div class='mailchimp-loading'><span><%= l(:label_loading) %></span></div>
+  </div>
+  <br/>
+  <br/>
+  <div id='campaings-placeholder'>
+    <h3><%= l(:label_mailchimp_campaigns) %></h3>
+    <div class='mailchimp-loading'><span><%= l(:label_loading) %></span></div>
+  </div>
+</div>
+<script type='text/javascript'>
+  loadMailchimpTabIfNeeded('<%= @contact.id %>', '<%= @project.id %>');
+</script>

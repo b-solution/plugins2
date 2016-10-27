@@ -1,0 +1,82 @@
+# encoding: utf-8
+# Simplified Chinese strings go here for Rails i18n
+# Author: zhoutt
+# Based on file: en.yml
+
+zh:
+  label_product: 產品
+  label_product_plural: 產品
+  label_products_code: 代碼
+  label_products_price: 價格
+  label_products_status: 狀態
+  label_products_description: 說明
+  label_products_name: 名稱
+  label_products_status_active: 已激活
+  label_products_status_inactive: 未激活
+  label_products_new: 新建產品
+  label_products_edit: 編輯產品
+  label_products_line_tax: 稅
+  label_products_line_discount: 折扣
+  label_order: 順序
+  label_order_plural: 順序
+  label_products_quantity: 數量
+  label_products_total: 總額
+  label_products_order_date: 訂單日期
+  label_products_closed_date: 關閉日期
+  label_products_order_lines: 訂單明細
+  label_products_order_placed: 新下訂單
+  label_products_product_created: 創建的新產品
+  label_products_number: 數量
+  label_products_currency: 貨幣
+  label_products_amount: 數量
+  label_products_order_new: 新訂單
+  label_products_order_edit: 編輯訂單
+  label_products_order_status_plural: 訂單狀態
+  label_products_order_status_new: 新建訂單狀態
+  label_products_order_subject: 訂單主題
+  label_products_order_unit_price: 單價
+  label_products_show_in_lines: 在行里顯示
+  label_products_show_in_top_menu: 在頂部菜單中顯示
+  label_products_show_in_app_menu: 在應用菜單中顯示
+  label_products_default_currency: 默認貨幣
+  label_products_cross_project_contacts: 交叉項目聯系人
+  label_products_select_companies: 選擇公司
+  label_products_order_last_number: '最后的訂單編號是#%{number}'
+  label_products_order_internal: 內部訂單
+  label_products_order_status_closed: 關閉
+  label_products_ordered: 已訂
+  label_products_image: 圖片
+  label_products_recent: 近期產品
+  label_products_orders_recent: 近期訂單
+  error_products_unable_delete_order_status: 不能刪除訂單狀態
+  label_products_add_line: 增加行
+  label_attribute_of_product: "產品的 %{name}"
+  label_attribute_of_lines: "生產線的 %{name}"
+  text_products_order_added: "訂單 %{number} 已經由 %{author}創建."
+  text_products_order_updated: "訂單 %{number} 已經由 %{author}更新."
+  text_products_order_status_changed: "訂單狀態已經被更新從 %{old} to %{new}"
+  text_products_order_amount_changed: "訂單量已經被更改從 %{old} to %{new}"
+  label_products_select: 選擇產品
+  label_products_item: 項目
+  label_products_subtotal: 小計
+  label_products_tax_total: 稅額
+  label_products_units_total: 總量
+  label_products_add: 新建產品
+  label_products_order_added: 新建的訂單
+  label_products_order_updated: 訂單更新
+  label_products_order_comment_added: 將注釋添加至訂單
+  label_products_add_description: 增加說明
+  label_products_search_for_products: 搜索產品添加
+  label_products_add_product_plural: 增加產品
+  label_products_search_for_product: 搜素產品
+  label_products_create_invoice: 創建發票
+
+  permission_manage_product_relations: 管理產品關系
+
+  #1.1.0
+  label_products_category: 分類
+  label_products_category_plural: 分類
+  label_products_is_bundle: 綁定
+  label_product_category_new: 新建分類
+  label_products_parent: 歸屬
+  label_products_category_filter: 產品的分類

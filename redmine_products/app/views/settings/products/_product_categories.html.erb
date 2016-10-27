@@ -1,0 +1,26 @@
+<div class="contextual">
+<%= link_to l(:label_product_category_new), {:controller => "product_categories", :action => 'new'}, :class => 'icon icon-add' %>
+</div>
+
+<h3><%=l(:label_products_category_plural)%></h3>
+
+<table class="list">
+  <thead><tr>
+  <th><%=l(:label_products_category)%></th>
+  <th><%=l(:label_products_code)%></th>
+  <th></th>
+  </tr></thead>
+  <tbody>
+<% ProductCategory.category_tree(ProductCategory.order('lft')) do |category, level| %>
+  <tr class="<%= cycle("odd", "even") %> project <%= category.css_classes %> <%= level > 0 ? "idnt idnt-#{level}" : nil %>">
+  <td class="name"><span><%= link_to category.name, edit_product_category_path(category) %></span></td>
+  <td class="code"><span><%= category.code %></span></td>
+  <td class="buttons">
+    <%= link_to(l(:button_delete), product_category_path(category), :method => :delete, :class => 'icon icon-del') %>
+  </td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+
+

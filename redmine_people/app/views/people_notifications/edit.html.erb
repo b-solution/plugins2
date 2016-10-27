@@ -1,0 +1,17 @@
+<h2><%=l(:label_notification)%></h2>
+
+<%= labelled_form_for(@note, :method => "PUT", :html => {:class => 'tabular'}) do |f|%>
+  <div class="box tabular">
+      <%= render :partial => 'form', :locals => { :f => f} %>
+  </div>
+  <p class='crm_pull_right'>
+    <%= f.submit l(:button_save) %>
+    <%= link_to_function(l(:label_preview), "showNotification('#{preview_people_notifications_path}');") %>
+  </p>
+<% end %>
+
+<div id="notification-show" style="display:none;">
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag :redmine_people, :plugin => 'redmine_people'  %>
+<% end %>

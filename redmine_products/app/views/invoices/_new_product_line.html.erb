@@ -1,0 +1,10 @@
+<% if User.current.allowed_to?(:view_products, nil, :global => true) %>
+
+  <%= text_field_tag :new_product_code, "", :placeholder => l(:label_products_add)  %>
+
+  <% content_for :header_tags do %>
+    <%= javascript_include_tag :products, :plugin => 'redmine_products'  %>
+    <%= javascript_tag "observeProductAutocompleteField('new_product_code', '#{escape_javascript auto_complete_products_path }', '#{escape_javascript add_invoice_product_line_path(:project_id => @project)}')" %>
+  <% end %>
+
+<% end %>

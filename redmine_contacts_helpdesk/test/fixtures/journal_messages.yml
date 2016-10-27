@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+jm001:
+  id: 1
+  contact_id: 1
+  journal_id: 1
+  is_incoming: false
+  source: <%= HelpdeskTicket::HELPDESK_EMAIL_SOURCE %>
+  message_date: <%= (Time.now - 2.days).to_s(:db) %>
+jm002:
+  id: 2
+  contact_id: 1
+  journal_id: 2
+  is_incoming: true
+  source: <%= HelpdeskTicket::HELPDESK_EMAIL_SOURCE %>
+  message_date: <%= (Time.now - 10.hours).to_s(:db) %>

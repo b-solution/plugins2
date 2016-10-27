@@ -1,0 +1,47 @@
+== Redmine Products plugin changelog
+
+Redmine Products plugin - managing products and orders plugin for Redmine
+Copyright (C) 2011-2015 Kirill Bezrukov
+http://www.redminecrm.com/
+
+== 2015-06-15 v2.0.0
+
+* Redmine 3 support
+* Chinese translation (zhoutt)
+
+== 2014-11-10 v1.1.0
+
+* Orders calendar view
+* Product categories
+* Recent orders for products
+
+== 2014-10-02 v1.0.4
+
+* Saving order queries
+* Creating invoices for order
+* Show product image and count on contact tab
+* Fixed recaclulation amount on delete line
+
+== 2014-05-03 v1.0.3
+
+* German translation (Oliver Lösch)
+* Spanish translation (Luis Blasco)
+
+== 2014-02-25 v1.0.2
+
+* Russian translation
+* Polish translation (Szymon Anders)
+* Redmine 2.5 support
+
+== 2014-01-30 v1.0.1
+
+* Show related invoices
+* Autocomplete for invoice order number
+* Fixed bug with empty settings
+* Sort products by name in issue conntection form
+* Added product code to REST API
+* Light version released
+
+== 2014-01-10 v1.0.0
+
+* Initial release

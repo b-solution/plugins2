@@ -1,0 +1,34 @@
+en:
+  label_mailchimp: Mailchimp
+  label_mailchimp_settings: Mailchimp
+  label_mailchimp_api_key: API key
+  label_mailchimp_name: List name
+  label_mailchimp_subscribers: Subscribers
+  label_mailchimp_opens: Opens
+  label_mailchimp_clicks: Clicks
+  label_mailchimp_date_created: Created
+  label_mailchimp_add_to_list: Add to list
+  label_mailchimp_subscribed: Subscribed to list
+  label_mailchimp_lists: Mailchimp lists
+  label_mailchimp_campaigns: Mailchimp campaigns
+  label_mailchimp_id: "#"
+  label_mailchimp_title: Title
+  label_mailchimp_subject: Subject
+  label_mailchimp_send_time: Send time
+  label_mailchimp_confirm_unlink: Unsubscribe this email from list?
+  label_mailchimp_unsubscribed: Unsubscribed
+  label_mailchimp_manage_lists: Manage Mailchimp lists
+  label_mailchimp_tags: 'Tags: '
+  label_mailchimp_not_selected: Not selected
+  label_mailchimp_remove_from_list: Remove from list
+  permission_view_mailchimp: View Mailchimp settings
+  permission_edit_mailchimp: Edit Mailchimp settings
+  label_mailchimp_sync: Sync
+  label_mailchimp_contact_query: Contact query
+  label_mailchimp_list: Mailchimp list
+  label_mailchimp_add: Add
+  label_mailchimp_delete: Delete
+  label_mailchimp_delete_confirm: Sure about deleting this assignment?
+  label_mailchimp_no_lists_available: No Mailchimp lists available
+  label_mailchimp_no_queries_available: No contact queries available
+  label_mailchimp_show_links: Show links

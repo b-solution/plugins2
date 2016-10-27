@@ -1,0 +1,4 @@
+gem 'mailchimp-api', require: 'mailchimp'
+group :test do
+  gem 'webmock'
+end

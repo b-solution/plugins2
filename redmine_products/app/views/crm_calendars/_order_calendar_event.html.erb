@@ -1,0 +1,6 @@
+<div class="issue order" data-id="<%= event.id %>">
+    <%= event.project unless @project && @project == event.project %>
+    <%= link_to event.amount_to_s, order_path(event), :class => "icon icon-order price", :style => "white-space: nowrap;" %>
+    <%= event.subject unless event.subject.blank? %>
+    <span class="contact"><%= event.contact.name if event.contact %></span>
+</div>

@@ -1,0 +1,60 @@
+Delivered-To: uq_support@i-trenta.net
+Received: by 10.194.51.100 with SMTP id j4csp10696wjo;
+        Fri, 8 Aug 2014 21:07:09 -0700 (PDT)
+X-Received: by 10.66.237.206 with SMTP id ve14mr1081190pac.40.1407557228385;
+        Fri, 08 Aug 2014 21:07:08 -0700 (PDT)
+Return-Path: <kent_guiseppe_saida@icloud.com>
+Received: from wp023.wappy.ne.jp (wp023.wappy.ne.jp. [203.145.230.194])
+        by mx.google.com with ESMTPS id iw4si7544395pac.156.2014.08.08.21.07.07
+        for <uq_support@i-trenta.net>
+        (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 08 Aug 2014 21:07:08 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning kent_guiseppe_saida@icloud.com does not designate 203.145.230.194 as permitted sender) client-ip=203.145.230.194;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning kent_guiseppe_saida@icloud.com does not designate 203.145.230.194 as permitted sender) smtp.mail=kent_guiseppe_saida@icloud.com;
+       dmarc=fail (p=NONE dis=NONE) header.from=icloud.com
+Received: by wp023.wappy.ne.jp (Postfix, from userid 110)
+	id 3FE6E880331; Sat,  9 Aug 2014 13:07:05 +0900 (JST)
+X-Original-To: support-uq@j-akua.com
+Delivered-To: support-uq@j-akua.com
+X-No-Auth: unauthenticated sender
+X-No-Relay: not in my network
+Received: from st13p13im-asmtp002.me.com (st13p13im-asmtp002.me.com [17.164.56.161])
+	by wp023.wappy.ne.jp (Postfix) with ESMTPS id A5CD588032B
+	for <support-uq@j-akua.com>; Sat,  9 Aug 2014 13:07:04 +0900 (JST)
+Received: from [192.168.1.11]
+ (pool-96-245-83-150.phlapa.fios.verizon.net [96.245.83.150])
+ by st13p13im-asmtp002.me.com
+ (Oracle Communications Messaging Server 7u4-27.10(7.0.4.27.9) 64bit (built Jun
+  6 2014)) with ESMTPSA id <0NA0009VJU3P7W20@st13p13im-asmtp002.me.com> for
+ support-uq@j-akua.com; Sat, 09 Aug 2014 04:07:02 +0000 (GMT)
+X-Proofpoint-Virus-Version: vendor=fsecure
+ engine=2.50.10432:5.12.52,1.0.27,0.0.0000
+ definitions=2014-08-09_01:2014-08-08,2014-08-09,1970-01-01 signatures=0
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ suspectscore=0 phishscore=0 adultscore=0 bulkscore=0 classifier=spam adjust=0
+ reason=mlx scancount=1 engine=7.0.1-1402240000 definitions=main-1408090054
+Subject: =?iso-2022-jp?B?GyRCJCpMZCQkOWckbyQ7GyhC?=
+From: =?iso-2022-jp?B?GyRCc25FRCUxJXMlSBsoQg==?=
+ <kent_guiseppe_saida@icloud.com>
+Content-type: text/plain; charset=iso-2022-jp
+X-Mailer: iPhone Mail (11D257)
+Message-id: <A6331557-B5BA-45C6-A24A-2303C57340D4@icloud.com>
+Date: Sat, 09 Aug 2014 00:06:59 -0400
+To: "support-uq@j-akua.com" <support-uq@j-akua.com>
+Content-transfer-encoding: quoted-printable
+MIME-version: 1.0 (1.0)
+
+=1B$B%W%l%$%d!<L>=1B(B:=1B$B$W$s$1=1B(B
+=1B$B%W%l%$%d!<=1B(BID=1B$B!'=1B(B252123764
+=1B$B%"%W%j%P!<%8%g%s=1B(B:1.0
+=1B$B$4;HMQ$N5!<o=1B(B:iPhone
+=1B$B$4;HMQ$N=1B(BOS:7.100000
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+=1B$B$$$D$b3Z$7$/;H$o$;$F$$$?$@$$$F$*$j$^$9!#0l$D5?Ld$K;W$C$?$N$G$9$,!"%f%K%=
+C%H$r8m$C$FGd5Q$d9g@.$7$F$7$^$o$J$$$?$a$N%7%9%F%`$H$$$&$N$O<BAu$5$l$F$$$^$9$=
++!)$b$7$5$l$F$k$J$i%X%k%W0lMw$K:\$;$F$$$?$@$-$?$$$G$9!#$b$7$5$l$F$$$J$$$J$i6=
+aF|Cf$K<BAu$N8!F$$r$h$m$7$/$*4j$$$7$^$9!#=1B(B
+
+Sent from my iPhone=

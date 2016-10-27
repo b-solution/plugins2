@@ -1,0 +1,154 @@
+<div class="contextual">
+    <% if !@query.new_record? && @query.editable_by?(User.current) %>
+    <%= link_to l(:button_people_edit_query), edit_people_query_path(@query), :class => 'icon icon-edit' %>
+    <%= link_to l(:button_people_delete_query), people_query_path(@query), :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %>
+    <% end %>
+    <%= link_to l(:label_user_new), {:controller => 'people', :action => 'new', :department_id => @department}, :class => 'icon icon-add' if User.current.allowed_people_to?(:add_people, @person) %>
+    <%= call_hook(:view_people_action_menu) %>
+</div>
+
+<% html_title(@query.new_record? ? l(:label_people) : @query.name) %>
+
+<div class="filters">
+	<%= form_tag({:contoller => "people", :action => "index"}, :method => :get,  :id => "query_form") do %>
+    <%= hidden_field_tag 'set_filter', '1' %>
+
+    <script type="text/javascript">
+       jQuery(function($) {
+          // when the #search field changes
+          $("#search").observe_field(2, function() {
+            var form = $("#query_form"); // grab the form wrapping the search bar.
+            var url = form.attr("action");
+            form.find('[name="c[]"] option').each(function(i, elem){
+              $(elem).attr('selected', true)
+            });
+            var formData = form.serialize();
+            form.find('[name="c[]"] option').each(function(i, elem){
+              $(elem).attr('selected', false)
+            });
+            $.get(url, formData, function(data) { // perform an AJAX get, the trailing function is what happens on successful get.
+                $("#people_list").html(data); // replace the "results" div with the result of action taken
+            });
+          });
+        });
+    </script>
+
+    <h2 class="people_header">
+        <span id='scope_header' class="scope_title">
+        <%= @query.new_record? ? l(:label_people) : @query.name %>
+        </span>
+
+        <span class="live_search">
+            <%= text_field_tag(:search, params[:search], :autocomplete => "off", :class => "live_search_field", :placeholder => l(:label_people_search) ) %>
+        </span>
+        <span class="tags">
+            <%= people_tag_links(@filter_tags) %>
+        </span>
+    </h2>
+    <fieldset id="filters" class="collapsible <%= @query.new_record? ? "" : "collapsed" %>">
+      <legend onclick="toggleFieldset(this);"><%= l(:label_filter_plural) %></legend>
+      <div style="<%= @query.new_record? ? "" : "display: none;" %>">
+        <%= render :partial => 'queries/filters', :locals => {:query => @query} %>
+      </div>
+    </fieldset>
+
+    <fieldset class="collapsible collapsed">
+      <legend onclick="toggleFieldset(this);"><%= l(:label_options) %></legend>
+      <div style="display: none;">
+        <table>
+          <% if people_list_style != 'list_excerpt' %>
+          <tr>
+            <td><%= l(:field_column_names) %></td>
+            <td><%= render_query_columns_selection(@query) %></td>
+          </tr>
+          <% end %>
+          <tr>
+          <td><label for='group_by'><%= l(:field_group_by) %></label></td>
+          <td><%= select_tag('group_by', options_for_select([[]] + @query.groupable_columns.collect {|c| [c.caption, c.name.to_s]}, @query.group_by)) %></td>
+          <% if people_list_style != 'list' %>
+            <td><label for='sort'><%= l(:label_sort) %></label></td>
+            <td><%= select_tag('sort',
+                               options_for_select(
+                                 [[]] +
+                                 [[l(:label_people_job_title), "job_title"],
+                                  [l(:label_people_department), "department_id"],
+                                  [l(:field_created_on), "created_on:desc"],
+                                  [l(:field_updated_on), "updated_on:desc"]],
+                                 params[:sort])
+                       ) %></td>
+          <% end %>
+          </tr>
+          <tr>
+            <td><label for='people_list_style'><%= l(:label_people_list_partial_style) %></label></td>
+            <td><%= select_tag('people_list_style', options_for_select(people_list_styles_for_select, people_list_style)) %></td>
+          </tr>
+        </table>
+      </div>
+    </fieldset>
+    <p class="buttons hide-when-print">
+      <%= link_to l(:button_apply), "#", :onclick=>"$('#query_form').submit()", :class => 'icon icon-checked' %>
+      <%= link_to l(:button_clear), { :set_filter => 1 }, :class => 'icon icon-reload'  %>
+      <% if @query.new_record? && User.current.logged? %>
+        <%= link_to_function l(:button_save),
+                             "$('#query_form').attr('action', '#{ new_people_query_path }').submit()",
+                             :class => 'icon icon-save' %>
+      <% end %>
+    </p>
+	<% end %>
+</div>
+<%= error_messages_for 'query' %>
+
+<div id="people_list">
+<% if @people.blank? %>
+    <p class="nodata"><%= l(:label_no_data) %></p>
+<% else %>
+    <%= render :partial => people_list_style %>
+    <span class="pagination"><%= pagination_links_full @people_pages, @people_count %></span>
+<% end %>
+</div>
+<% other_formats_links do |f| %>
+    <%= f.link_to 'CSV', :url => params %>
+<% end if false%>
+
+<% html_title l(:label_people) %>
+
+<%= context_menu url_for( {:controller => "people", :action => "context_menu"} )%>
+
+<% content_for :sidebar do %>
+  <div id='links'>
+    <h3><%= l(:label_people) %></h3>
+    <%= link_to l(:label_department_plural), departments_path %>
+    <br>
+    <%= link_to l(:label_notification_plural), people_notifications_path(:tab => 'people_notifications') if User.current.allowed_people_to?(:edit_notification) %>
+  </div>
+  <div id="queries">
+    <%= render_sidebar_people_queries('people') %>
+  </div>
+
+  <% unless true || @departments.blank? %>
+  <div id="people_departments">
+    <h3><%= l(:label_department_plural) %></h3>
+    <%= department_tree_links(@departments) %>
+  </div>
+  <% end %>
+  <div id="tags">
+    <%= render :partial => 'tags_cloud', :object => @tags %>
+  </div>
+
+  <div id="next_birthdays">
+    <h3><%= l(:label_people_next_birthdays) %></h3>
+    <%= render :partial => 'person_birthday', :collection => @next_birthdays %>
+  </div>
+
+  <div id="new_people">
+    <h3><%= l(:label_people_new_people) %></h3>
+    <%= render :partial => 'person_data', :collection => @new_people %>
+  </div>
+
+<% end %>
+
+<% content_for :header_tags do %>
+    <%= javascript_include_tag :redmine_people, :plugin => 'redmine_people'  %>
+	<%= stylesheet_link_tag :redmine_people, :plugin => 'redmine_people' %>
+	<meta name = "format-detection" content = "telephone=no">
+<% end %>

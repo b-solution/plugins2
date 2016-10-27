@@ -1,0 +1,27 @@
+<ul>
+
+	<% if @order.present? %>
+		<li><%= context_menu_link l(:button_edit), {:controller => 'orders', :action => 'edit', :id => @order}, :class => 'icon-edit', :disabled => !@can[:edit] %></li>
+    <li><%= context_menu_link l(:label_invoice_new), new_invoice_path(:project_id => Invoice.allowed_target_projects.include?(@project) ? @project : Invoice.allowed_target_projects.first, :copy_from_object => {:object_id => @order.id, :object_type => 'order'}), :class => 'icon icon-invoice-add-context' if ProductsSettings.invoices_plugin_installed? && User.current.allowed_to?(:add_invoices, nil, :global => true) %></li>
+	<% else %>
+    <!-- <li><%= context_menu_link l(:button_edit), {:controller => 'orders', :action => 'bulk_edit', :ids => @orders.collect(&:id)},
+            :class => 'icon-edit', :disabled => !@can[:edit] %></li> -->
+	<% end %>
+
+
+    <% unless @project.nil? -%>
+		<li class="folder">
+			<a href="#" class="submenu"><%= l(:field_status) %></a>
+			<ul>
+			<% collection_for_order_status_for_select.each do |u| -%>
+			    <li><%= context_menu_link u[0], {:controller => 'orders', :action => 'bulk_update', :ids => @orders.collect(&:id), :order => {'status_id' => u[1]}, :back_url => @back}, :method => :post,
+			                              :selected => (@order && u[1] == @order.status_id), :disabled =>  !@can[:edit] %></li>
+			<% end -%>
+			</ul>
+		</li>
+	<% end %>
+
+   	 <li><%= context_menu_link l(:button_delete), {:controller => 'orders', :action => 'bulk_destroy', :ids => @orders.collect(&:id)},
+                            :method => :delete, :confirm => l(:text_are_you_sure), :class => 'icon-del', :disabled => !@can[:delete] %></li>
+</ul>
+

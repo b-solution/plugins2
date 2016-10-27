@@ -1,0 +1,11 @@
+api.array :order_statuses do
+  @order_statuses.each do |status|
+    api.order_status do
+      api.id status.id
+      api.name status.name
+      api.color status.color_name
+      api.is_default status.is_default
+      api.is_closed status.is_closed
+    end
+  end
+end

@@ -1,0 +1,29 @@
+--- 
+custom_fields_001: 
+  name: Car model
+  min_length: 1
+  regexp: ""
+  is_for_all: true
+  is_filter: true
+  type: UserCustomField
+  max_length: 100
+  id: 1
+  is_required: false
+  field_format: string
+  searchable: true
+  default_value: ""
+  editable: true
+  position: 1
+custom_fields_006: 
+  name: Height
+  regexp: ""
+  is_for_all: true
+  is_filter: true
+  type: UserCustomField
+  possible_values: ""
+  id: 2
+  is_required: false
+  field_format: int
+  default_value: 
+  editable: true
+  position: 2

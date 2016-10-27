@@ -1,0 +1,11 @@
+<%= error_messages_for 'category' %>
+<% extend ProductsHelper %>
+
+<div class="box tabular">
+<p><%= f.text_field :name, :required => true, :label => l(:field_name) %></p>
+<p><%= f.text_field :code, :label => l(:label_products_code) %></p>
+<% unless @category.allowed_parents.compact.empty? %>
+<p><%= f.select :parent_id, product_category_tree_options_for_select(@category.allowed_parents, :selected => @category.parent), :label => l(:label_products_parent), :include_blank => true %></p>
+<% end %>
+</div>
+

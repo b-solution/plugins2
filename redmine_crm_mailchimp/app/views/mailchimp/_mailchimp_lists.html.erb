@@ -1,0 +1,63 @@
+<% user = MailchimpEmail.new(@contact.email) %>
+<% if MailchimpList.subscribed_by(user).any? %>
+  <table class="list issues" id='mailchimp-lists'>
+    <thead>
+      <tr>
+        <th><%= l(:label_mailchimp_name) %></th>
+        <th><%= l(:label_mailchimp_subscribers) %></th>
+        <th><%= l(:label_mailchimp_opens) %></th>
+        <th><%= l(:label_mailchimp_clicks) %></th>
+        <th><%= l(:label_mailchimp_date_created) %></th>
+        <% if User.current.allowed_to?(:edit_mailchimp, @project) %>
+          <th></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% MailchimpList.all.each do |list| %>
+        <% if user && user.belongs_to?(list) %>
+          <tr>
+            <td>
+              <% if RedmineCrmMailchimp::Settings[:show_links] %>
+                <%= link_to list.name, RedmineCrmMailchimp::Settings.list_url(list.web_id) %>
+              <% else %>
+                <%= list.name %>
+              <% end %>
+            </td>
+            <td>
+              <%= list.member_count %>
+            </td>
+            <td>
+              <%= "%0.2f" % list.open_rate %>
+            </td>
+            <td>
+              <%= "%0.2f" % list.click_rate %>
+            </td>
+            <td>
+              <%= format_time(list.date_created) %>
+            </td>
+            <% if User.current.allowed_to?(:edit_mailchimp, @project) %>
+              <td>
+                <%= link_to '', mailchimp_memberships_path(:contact_id => @contact.id, :list_id => list.id, :project_id => @project.id), :method => :delete, :remote => true, :confirm => l(:label_mailchimp_confirm_unlink), :class => 'icon icon-link-break' %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+<div class='box' id='add-to-list-form' style='display: none'>
+  <%= form_tag mailchimp_memberships_path(:contact_id => @contact.id, :project_id => @project.id), remote: true do |form| %>
+    <p>
+      <% if MailchimpList.subscribable_for(user).any? %>
+        <label><%= l(:label_mailchimp_add_to_list) %></label>
+        <%= select_tag :list_id, options_from_collection_for_select(MailchimpList.subscribable_for(user), :id, :name) %>
+        <%= submit_tag l(:button_add), :class => 'button-small' %>
+        <a href='#' id='hide-add-to-list-form' onclick="$('#add-to-list-form').toggle();return false;"><%= l(:button_cancel) %></a>
+      <% else %>
+        <span><%= l(:label_mailchimp_no_lists_available) %></span>
+      <% end %>
+    </p>
+  <% end %>
+</div>

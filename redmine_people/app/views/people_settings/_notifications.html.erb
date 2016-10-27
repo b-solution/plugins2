@@ -1,0 +1,55 @@
+<div class="contextual">
+  <%= link_to l(:label_notification_new), new_people_notification_path,
+    :class => 'icon icon-add' if User.current.allowed_people_to?(:edit_notification)
+  %>
+</div>
+
+<h2><%=l(:label_notification_plural)%></h2>
+<%= form_tag(people_settings_path, :method => :get) do %>
+  <fieldset>
+    <legend><%= l(:label_filter_plural) %></legend>
+    <label for='status'><%= l(:field_status) %>:</label>
+    <%= select_tag 'notifications_status',
+      options_for_select(PeopleNotification::STATUS.map{|s| [l("notification_status_#{s}"), s]}, notification_status),
+      :class => "small", :onchange => "this.form.submit(); return false;"
+    %>
+    <%= hidden_field_tag 'tab', 'people_notifications', :id => nil %>
+  </fieldset>
+<% end %>
+<% if @notifications.any? %>
+  <div class="autoscroll">
+    <table class="list">
+      <thead>
+        <tr>
+          <th><%=l(:label_notification_description)%></th>
+          <th><%=l(:label_notification_frequency)%></th>
+          <th><%=l(:label_notification_start_date)%></th>
+          <th><%=l(:label_notification_end_date)%></th>
+          <th><%=l(:label_notification_active)%></th>
+          <% if User.current.allowed_people_to?(:edit_notification) %>
+            <th></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% @notifications.each do |note| %>
+          <tr class="<%= cycle("odd", "even") %>">
+            <td class="name"><span><%= note.description.truncate(100) %></span></td>
+            <td align="center"><%= l("frequency_#{note.frequency}") %></td>
+            <td align="center"><%= format_date(note.start_date) %></td>
+            <td align="center"><%= format_date(note.end_date) %></td>
+            <td align="center" class='tick'><%= checked_image note.active? %></td>
+            <% if User.current.allowed_people_to?(:edit_departments) %>
+              <td class="buttons">
+                <%= link_to(l(:button_edit), edit_people_notification_path(note), :class => 'icon icon-edit' ) %>
+                <%= link_to(l(:button_delete), people_notification_path(note), :method => :delete, :class => 'icon icon-del') %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>

@@ -1,0 +1,23 @@
+<% if User.current.allowed_to?(:edit_deals, @project) %>
+  <% @issue.build_deals_issue(:deal_id => '') if @issue.deals_issue.blank? %>
+
+  <%= form.fields_for :deals_issue do |f| %>
+    <div class="issue-deal">
+      <p>
+        <%= f.text_field :deal_id, :label => l(:label_deal), :size => 6 %>
+        <span id="issue_deal"><%= h("#{@issue.deals_issue.deal.full_name} (#{@issue.deals_issue.deal.info})") if @issue.deals_issue && @issue.deals_issue.deal %></span>
+      </p>
+    </div>
+
+  <%= javascript_tag do %>
+    observeAutocompleteField('issue_deals_issue_attributes_deal_id', '<%= escape_javascript auto_complete_deals_path %>', {
+      select: function(event, ui) {
+        $('#issue_deal').text(ui.item.label);
+      }
+    });
+  <% end %>
+
+
+  <% end %>
+
+<% end %>

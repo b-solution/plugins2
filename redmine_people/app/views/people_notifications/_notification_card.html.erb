@@ -1,0 +1,4 @@
+<div class="wiki <%= note.css_class %> wiki-page">
+  <%= textilizable(note, :description) %>
+  <%= link_to_attachments(note, :thumbnails => true) if note.attachments.any? %>
+</div>

@@ -1,0 +1,36 @@
+<h3><%= "#{l(:label_products_ordered)}#{' - ' + @order.contact.name.strip if @order && @order.contact}"  %></h3>
+<table class="orders-stat">
+  <% if @today_sum  %>
+  <tr>
+    <th><%= l(:label_today).mb_chars.capitalize.to_s %></th>
+    <td class="sum"><%= prices_collection_by_currency(@today_sum, :hide_zeros => true).join("<br/>").html_safe %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <th><%= l(:label_this_week).mb_chars.capitalize.to_s %></th>
+    <td class="sum"><%= prices_collection_by_currency(@current_week_sum, :hide_zeros => true).join("<br/>").html_safe %></td>
+  </tr>
+  <tr>
+    <th><%= l(:label_last_week).mb_chars.capitalize.to_s %></th>
+    <td class="sum"><%= prices_collection_by_currency(@last_week_sum, :hide_zeros => true).join("<br/>").html_safe %></td>
+  </tr>
+  <tr>
+    <th><%= l(:label_this_month).mb_chars.capitalize.to_s %></th>
+    <td class="sum"><%= prices_collection_by_currency(@current_month_sum, :hide_zeros => true).join("<br/>").html_safe %></td>
+  </tr>
+  <tr>
+    <th><%= l(:label_last_month).mb_chars.capitalize.to_s %></th>
+    <td class="sum"><%= prices_collection_by_currency(@last_month_sum, :hide_zeros => true).join("<br/>").html_safe %></td>
+  </tr>
+  <tr>
+    <th><%= l(:label_this_year).mb_chars.capitalize.to_s %></th>
+    <td class="sum"><%= prices_collection_by_currency(@current_year_sum, :hide_zeros => true).join("<br/>").html_safe %></td>
+  </tr>
+  <% if @order && @order.contact %>
+  <tr class="delimiter"><td colspan="2"><hr></td></tr>
+  <tr>
+    <th><%= l(:label_products_total) %></th>
+    <td class="sum"><%= prices_collection_by_currency(@order.contact.orders_balance, :hide_zeros => true).join("<br/>").html_safe %></td>
+  </tr>
+  <% end %>
+</table>

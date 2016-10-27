@@ -1,0 +1,10 @@
+api.array :product_categories, api_meta(:total_count => @categories.size) do
+  @categories.each do |category|
+    api.product_category do
+      api.id category.id
+      api.name category.name
+      api.code category.code
+      api.parent(:id => category.parent_id, :name => category.parent.name) unless category.parent.blank?
+    end
+  end
+end

@@ -1,0 +1,6 @@
+<h2><%= link_to l(:label_products_order_status_plural), :action =>"plugin", :id => "redmine_products", :controller => "settings", :tab => 'order_statuses' %> &#187; <%=h @order_status %></h2>
+
+<%= labelled_form_for @order_status do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <%= submit_tag l(:button_save) %>
+<% end %>

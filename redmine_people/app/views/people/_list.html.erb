@@ -1,0 +1,41 @@
+<%= form_tag({}) do %>
+<%= hidden_field_tag 'back_url', url_for(params) %>
+<div class="autoscroll">
+  <table class="list people">
+    <thead>
+      <tr>
+        <th class="checkbox hide-when-print"><%= link_to image_tag('toggle_check.png'), {}, :onclick => 'toggleIssuesSelection(this); return false;',
+                                                           :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}" %>
+        </th>
+        <% @query.columns.each do |column| %>
+          <%= column_header(column) %>
+        <% end %>
+      </tr>
+    </thead>
+
+  <% previous_group = false %>
+  <tbody>
+  <% @people.each do |person| -%>
+    <% if @query.grouped? && (group = @query.group_by_column.value(person)) != previous_group %>
+      <% reset_cycle %>
+      <tr class="group open">
+        <td colspan="<%= @query.columns.size + 2 %>">
+          <span class="expander" onclick="toggleRowGroup(this);">&nbsp;</span>
+          <%= group.blank? ? l(:label_none) : column_content(@query.group_by_column, person) %> <span class="count">(<%= @people_count_by_group[group] %>)</span>
+          <%= link_to_function("#{l(:button_collapse_all)}/#{l(:button_expand_all)}", "toggleAllRowGroups(this)", :class => 'toggle-all') %>
+        </td>
+      </tr>
+      <% previous_group = group %>
+    <% end %>
+
+
+    <tr id="person-<%= h(person.id) %>" class="hascontextmenu">
+      <td class="checkbox hide-when-print"><%= check_box_tag("ids[]", person.id, false, :id => nil) %></td>
+      <% @query.columns.each do |column| %><%= content_tag 'td', column_content(column, person), :class => column.css_classes %><% end %>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+ </div>
+<% end %>

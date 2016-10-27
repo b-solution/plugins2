@@ -1,0 +1,28 @@
+<div class="vote_form">
+  <h2><%= l(:label_helpdesk_mark) %></h2>
+  <%= form_tag helpdesk_votes_vote_path(:id => @ticket.id, :hash => @ticket.token) do %>
+    <p>
+        <%= label_tag :vote_2, nil, :class => 'vote-value' do %>
+          <%= radio_button_tag('vote', 2, @ticket.vote == 2 || @ticket.vote == nil ? true : false) %>
+          <span class="icon icon-awesome"><%= t(:label_helpdesk_mark_awesome) %></span>
+        <% end %>
+
+        <%= label_tag :vote_1, nil, :class => 'vote-value' do %>
+          <%= radio_button_tag('vote', 1, @ticket.vote == 1 ? true : false) %>
+          <span class="icon icon-justok"><%= t(:label_helpdesk_mark_justok) %></span>
+        <% end %>
+
+        <%= label_tag :vote_0, nil, :class => 'vote-value' do %>
+          <%= radio_button_tag('vote', 0, @ticket.vote == 0 ? true : false) %>
+          <span class="icon icon-notgood"><%= t(:label_helpdesk_mark_notgood) %></span>
+        <% end %>
+    </p>
+    <%- if RedmineHelpdesk.vote_comment_allow? %>
+      <%= text_area_tag('vote_comment', nil, { :size => '60x12', :placeholder => t(:label_helpdesk_vote_comment_placeholder) }) %>
+    <% end %>
+
+    <div class='submit'>
+      <%= submit_tag(t(:label_helpdesk_submit)) %>
+    </div>
+  <% end %>
+</div>

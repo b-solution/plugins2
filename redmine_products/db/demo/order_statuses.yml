@@ -1,0 +1,15 @@
+<%
+  require 'digest/md5'
+  puts "Loading order statuses..."
+
+  names = %w(New Placed Approved Paid Delivered)
+  for i in (0 .. 4) do
+%>
+order_<%= i %>:
+  id          : <%= i + 1 %>
+  name        : <%= name = names[i] %>
+  is_default  : <%= i == 1 ? true : false %>
+  is_closed   : <%= i == 4 ? true : false %>
+  color       : <%= Digest::MD5.hexdigest(name)[0..5].hex %>
+  position    : <%= i + 1%>
+<% end %>

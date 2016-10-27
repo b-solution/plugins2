@@ -1,0 +1,94 @@
+Received: from mxfront24.mail.yandex.net ([127.0.0.1])
+	by mxfront24.mail.yandex.net with LMTP id 4EJ8b63Q
+	for <admin@rusdsu.ru>; Tue, 25 Sep 2012 00:04:14 +0400
+Received: from f262.mail.ru (f262.mail.ru [217.69.128.183])
+	by mxfront24.mail.yandex.net (nwsmtp/Yandex) with ESMTP id 4DQWhu8P-4DQanULm;
+	Tue, 25 Sep 2012 00:04:13 +0400
+X-Yandex-Front: mxfront24.mail.yandex.net
+X-Yandex-TimeMark: 1348517053
+X-Yandex-Spam: 1
+Authentication-Results: mxfront24.mail.yandex.net; spf=pass (mxfront24.mail.yandex.net: domain of mail.ru designates 217.69.128.183 as permitted sender) smtp.mail=kr.dinara@mail.ru; dkim=pass header.i=@mail.ru
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mail.ru; s=mail;
+	h=Content-Type:Message-ID:Reply-To:Date:Mime-Version:Subject:To:From; bh=6AG9O02D+tdox2tGn+S0CuNnG+vo8JZFW6O07Wi6pbc=;
+	b=hD+St2tofZQJpnfiWc359M4AcgBOzST7l+oi+F6Ps6qpkArQB2YNE3oAd5eU73otby43JLacIP1k9swxQnZ3pKgrp2bwHRPbfi5TltRjIc69hu1dTOOBlUcBVTeEDSNR;
+Received: from mail by f262.mail.ru with local (envelope-from <kr.dinara@mail.ru>)
+	id 1TGEt3-00080T-1r
+	for admin@rusdsu.ru; Tue, 25 Sep 2012 00:04:13 +0400
+Received: from [91.122.47.102] by e.mail.ru with HTTP;
+	Tue, 25 Sep 2012 00:04:12 +0400
+From: =?UTF-8?B?0JTQuNC90LDRgNCwINCa0YDQtdC80YfQtdC10LLQsA==?= <kr.dinara@mail.ru>
+To: admin@rusdsu.ru
+Subject: =?UTF-8?B?0YDQtdC30YPQu9GM0YLQsNGC0Ysg0YLRg9GA0L3QuNGA0LA=?=
+Mime-Version: 1.0
+X-Mailer: mPOP Web-Mail 2.19
+X-Originating-IP: [91.122.47.102]
+Date: Tue, 25 Sep 2012 00:04:13 +0400
+Reply-To: =?UTF-8?B?0JTQuNC90LDRgNCwINCa0YDQtdC80YfQtdC10LLQsA==?= <kr.dinara@mail.ru>
+X-Priority:
+Message-ID: <1348517052.646495476@f262.mail.ru>
+Content-Type: multipart/mixed;
+	boundary="----ebeAvE4R-OtZ6LOueGKzSIBFf:1348517052"
+X-Spam: Not detected
+X-Mras: Ok
+Return-Path: kr.dinara@mail.ru
+X-Yandex-Forward: 4a1d766bfd8c33858729d5998daf62e5
+
+
+------ebeAvE4R-OtZ6LOueGKzSIBFf:1348517052
+Content-Type: multipart/alternative;
+	boundary="--ALT--ebeAvE4R1348517052"
+
+
+----ALT--ebeAvE4R1348517052
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: base64
+
+
+----ALT--ebeAvE4R1348517052
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: base64
+
+CjxIVE1MPjxCT0RZPjwvQk9EWT48L0hUTUw+Cg==
+
+----ALT--ebeAvE4R1348517052--
+
+------ebeAvE4R-OtZ6LOueGKzSIBFf:1348517052
+Content-Type: application/octet-stream; name="=?UTF-8?B?0LLQvtGB0YXQvtC00Y/RidC40LUg0LfQstC10LfQtNGLIDIwMTIgNiDRgtGD?=
+ =?UTF-8?B?0YAueG1s?="
+Content-Disposition: attachment
+Content-Transfer-Encoding: base64
+
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0id2luZG93cy0xMjUxIj8+DQo8RGFuY2VEYXRh
+IHZlcnNpb249IjIuMSI+PEdyb3VwRGF0YT48SGVhZGVyIGxhbmd1YWdlPSJSdXNzaWFuIj48VGl0
+bGUgc3RhdHVzPSLQ7vHx6Onx6u7lIPHu8OXi7e7i4O3o5SDq4PIuIEIiIGRhdGVDb21wPSIyMy4w
+OS4yMDEyIj7C7vH17uT/+ejlIOfi5efk+yAyMDEyICg2IPLz8Ck8L1RpdGxlPjxDaXR5PtEuLc/l
+8uXw4fPw4zwvQ2l0eT48T3JnYW5pemVyPsTo7eDs7iwgwevo7e7iIMXi4+Xt6Ok8L09yZ2FuaXpl
+cj48SW5pdGlhdG9yPtTS0SDR4O3q8i3P5fLl8OHz8OPgPC9Jbml0aWF0b3I+PENvdW50cnk+0O7x
+8ej/PC9Db3VudHJ5PjxSZWdpb25JRD43ODwvUmVnaW9uSUQ+PFByb2dyYW0gZGV2ZWxvcGVyPSLK
+8Oji7vnl6u7iIMTs6PLw6OksIOMuIM3u4u7x6OHo8PHqIiBlbWFpbD0ic2thdGVAYmFsbHJvb20u
+cnUiIHVzZXJlbWFpbD0ia3JlbXppYUB5YWhvby5jb20iIHVzZXI9Isrw5ez35eXi4CDE6O3g8OAs
+IOMuINHg7eryLc/l8uXw4fPw4yIgdmVyc2lvbj0iNSAoMjEuMDkuMjAxMikiPlNrYXRpbmcgU3lz
+dGVtPC9Qcm9ncmFtPjxHcm91cCBwcm9ncmFtPSLR7urw4Pnl7e3u5SDk4u7l4e7w/OUgKDYg8uDt
+9uXiKSIgY2xhc3M9IkUiIG5vPSIyNyIgYWdlQ2F0ZWdvcnk9It7t6O7w+y0xIiBwcm9ncmFtUGFy
+dD0iMSI+3u3o7vD7LTEsINHu6vDg+eXt7e7lIOTi7uXh7vD85SAoNiDy4O325eIpIChFIOrr4PHx
+KTwvR3JvdXA+PEp1ZGdlcz45PC9KdWRnZXM+PENvdXBsZXM+MTU8L0NvdXBsZXM+PC9IZWFkZXI+
+PFJlZ2lzdHJhdGlvbj48Q2xhc3NSZWdpc3RyYXRpb24+PENsYXNzQ291bnQgbmFtZT0iRSI+MTU8
+L0NsYXNzQ291bnQ+PC9DbGFzc1JlZ2lzdHJhdGlvbj48Q291cGxlcz48Q291cGxlIG49IjE3IiBw
+bGFjZT0iMSIgY2xhc3M9IkUiIHBvaW50cz0iMywwIiBjbGFzc1BsYWNlPSIxIiBjbGFzc0ludFJl
+Zz0iMTUiPjxNYWxlIGZpcnN0TmFtZT0i0eXw4+XpIiBsYXN0TmFtZT0izPPx6+jt7uIiIGNsYXNz
+PSJFIiBib29rTnVtYmVyPSIxMDg4MTIiIGJpcnRoRGF5PSIyMy4xMi4yMDAwIiBsYXN0Rmlyc3RO
+YW1lPSLM8/Hr6O3u4iDR5fDj5ekiLz48RmVtYWxlIGZpcnN0TmFtZT0izODw6P8iIGxhc3ROYW1l
+PSLO8Ovu4uAiIGNsYXNzPSJEIiBib29rTnVtYmVyPSI5MzE3MSIgYmlydGhEYXk9IjE5LjA4LjIw
+MDEiIGxhc3RGaXJzdE5hbWU9Is7w6+7i4CDM4PDo/yIgY2xhc3NJbnRSZWc9IjEiIGNsYXNzUGxh
+Y2U9IjEiIHBvaW50cz0iMCwwIi8+PENsdWIgY2l0eT0i0S4tz+Xy5fDh8/DjIiBuYW1lPSLU5eXw
+6P8iIGNvdW50cnk9ItDu8fHo/yIgdHJlbmVyMUxhc3ROYW1lPSLN4Onk5e3u4uAiIHRyZW5lcjFG
+aXJzdE5hbWU9Isv+5Ozo6+AiIHRyZW5lcjJMYXN0TmFtZT0iIiB0cmVuZXIyRmlyc3ROYW1lPSIi
+IHJlZ2lvbklkPSI3OCIvPjwvQ291cGxlPjxDb3VwbGUgbj0iMjAiIHBsYWNlPSIyIiBjbGFzcz0i
+RSIgcG9pbnRzPSIyLDAiIGNsYXNzUGxhY2U9IjIiIGNsYXNzSW50UmVnPSIxNSI+PE1hbGUgZmly
+c3ROYW1lPSLQ7uzg7SIgbGFzdE5hbWU9Isrz7+jtIiBjbGFzcz0iRSIgYm9va051bWJlcj0iNjY4
+MjAiIGJpcnRoRGF5PSIyMy4wMy4yMDAwIiBsYXN0Rmlyc3ROYW1lPSLK8+/o7SDQ7uzg7SIvPjxG
+ZW1hbGUgZmlyc3ROYW1lPSLA8Ojt4CIgbGFzdE5hbWU9IsDt8/Xo7eAiIGNsYXNzPSJFIiBib29r
+NTMxMjExPC9SZXN1bHQ+PC9EYW5jZT48L0RhbmNlcz48L1JvdW5kPjwvUmVzdWx0cz48L0dyb3Vw
+RGF0YT48L0RhbmNlRGF0YT4NCg==
+
+------ebeAvE4R-OtZ6LOueGKzSIBFf:1348517052--

@@ -1,0 +1,73 @@
+<% if @order.lines.any? %>
+<table class="list product-lines">
+<thead>
+<tr>
+  <th>#</th>
+  <th><%= l(:label_products_item) %></th>
+  <% ProductLine.new.available_custom_fields.select{|f| f.is_filter? }.each do |custom_field| %>
+    <th><%= custom_field.name %></th>
+  <% end %>
+  <th><%= l(:label_products_quantity) %></th>
+  <% if @order.has_taxes? %>
+  <th><%= l(:label_products_line_tax) %></th>
+  <% end %>
+  <% if @order.has_discounts? %>
+  <th><%= l(:label_products_line_discount) %></th>
+  <% end %>
+  <th class="price"><%= l(:label_products_price) %></th>
+  <th class="total"><%= l(:label_products_total) %></th>
+</tr>
+</thead>
+<% @order.lines.each do |line| %>
+  <tr class="line-data <%= cycle('odd', 'even') %>">
+    <td class="position"><%= line.position %></td>
+    <td class="item">
+      <% if line.product %>
+        <%= product_tag(line.product, :size => 32, :type => (line.product.image.blank? ? 'plain' : '') ) %>
+        <% unless line.description.blank? %>
+          <br>
+          <em class="info"><%= line.description %></em>
+        <% end %>
+      <% else %>
+        <%= line.description %>
+      <% end %>
+    </td>
+    <% ProductLine.new.available_custom_fields.select{|f| f.is_filter? }.each do |custom_field| %>
+      <td class="custom_field_<%= custom_field.id %>"><%= simple_format_without_paragraph(show_value(line.custom_value_for(custom_field))) %></td>
+    <% end %>
+    <td class="quantity">x<%= line.quantity %></td>
+    <% if @order.has_taxes? %>
+    <td class="tax"><%= line.tax_to_s unless line.tax == 0 %></td>
+    <% end %>
+    <% if @order.has_discounts? %>
+    <td class="discount"><%= line.discount_to_s unless line.discount == 0 %></td>
+    <% end %>
+    <td class="price"><%= line.price_to_s %></td>
+    <td class="total_price"><%= line.total_to_s %></td>
+  </tr>
+<% end %>
+<tr class="total delimiter"><th></th></tr>
+<% @custom_fields_count = ProductLine.new.available_custom_fields.select{|f| f.is_filter? }.size %>
+<% total_colspan = 4 + @custom_fields_count.to_i + (@order.has_taxes? ? 1 : 0) + (@order.has_discounts? ? 1 : 0) %>
+<tr class="total">
+  <th colspan="<%= total_colspan %>" class="total"><%= l(:label_products_units_total) %>:</th>
+  <th class="total_units"><%= @order.total_units %></th>
+</tr>
+<% if @order.has_taxes? %>
+<tr class="total">
+  <th colspan="<%= total_colspan %>" class="total"><%= l(:label_products_subtotal) %>:</th>
+  <th class="subtotal_amount"><%= @order.subtotal_to_s %></th>
+</tr>
+<tr class="total">
+  <th colspan="<%= total_colspan %>" class="total"><%= l(:label_products_tax_total) %>:</th>
+  <th class="tax_amount"><%= @order.tax_amount_to_s %></th>
+</tr>
+<% end %>
+<tr class="total">
+  <th colspan="<%= total_colspan %>" class="total"><%= l(:label_products_total) %>:</th>
+  <th class="total_amount"><%= @order.amount_to_s %></th>
+</tr>
+
+
+</table>
+<% end %>

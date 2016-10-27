@@ -1,0 +1,145 @@
+# Serbian strings go here for Rails i18n
+sr:
+  label_helpdesk: Хелпдеск
+  label_helpdesk_auto_answer_template: Шаблон аутоматског одговарања мејлом
+  text_helpdesk_answer_macros: Доступни macros %{macro}
+  label_is_send_mail: Послати обавјештење
+  label_send_auto_answer: Аутоматско слање одговора
+  label_received_from: Примљено од
+  label_sent_to: Послано
+  project_module_contacts_helpdesk: Хелппдеск
+  permission_send_response: Послати одговор контакту
+  permission_edit_helpdesk_settings: Уредити подешавања за хелпдеск
+  label_not_create_contacts: Вајтлист контакта
+  field_created_contact_tags: Додати обавјештења након креирања
+  label_helpdesk_save_as_attachment: Счувати мејлове као прилоге/датотеке
+
+#1.0.2
+  label_helpdesk_assign_author: Пошиљалц поставља предмет аутора
+
+#1.0.3
+  label_helpdesk_answered_status: Одговорити на статус тикета
+  label_helpdesk_reopen_status: Поново отворити тикет статус
+  label_helpdesk_tracker: Претраживач тикета
+  label_helpdesk_assigned_to: Додјелти тикет
+  label_helpdesk_lifetime: Трајање тикета
+  label_helpdesk_server_settings: Подешавања мејла
+  label_helpdesk_protocol: Протокол
+  label_helpdesk_host: Хост
+  label_helpdesk_port: Порт
+  label_helpdesk_username: Корисничко име
+  label_helpdesk_password: Лозинка
+  label_helpdesk_ssl: ССЛ
+  label_helpdesk_imap_folder: ИМАП фолдер
+  label_helpdesk_move_on_success: Прећи на успјех
+  label_helpdesk_move_on_failure: Прећи на пад
+  label_helpdesk_apop: АПОП
+  label_helpdesk_delete_unprocessed: Избрисати  не прегледане/не обрађене поруке
+  label_helpdesk_first_answer_template: Шаблон
+  label_helpdesk_test_connection: Тест конекције
+  label_helpdesk_get_mail: Примити мејл
+  label_helpdesk_get_mail_success: "Прегледан %{count} мејл(ова)"
+  label_helpdesk_css: Образац имејла (ЦСС)
+  label_helpdesk_original: Оригинал
+
+#1.0.4
+  label_helpdesk_blacklist: Блеклист мејлови
+  label_helpdesk_previous_issues: Тикети претходног купца
+  permission_view_helpdesk_tickets: Приступ корисним информацијама о тикету
+  label_helpdesk_last_message: Посљедња порука
+  label_helpdesk_enable_modules: Контакти и предемт модули би требали бити омогућени за овај пројекат
+  label_helpdesk_customer_profile: Профил купца
+  label_helpdesk_show_contact_card: Приказ профила купца
+
+#2.0.0
+  label_helpdesk_send_note_by_default: Посалти обавјештење
+  label_helpdesk_ticket_attributes: Обиљежија тикета
+  label_helpdesk_to_address: Унијети адресу
+  label_helpdesk_from_address: Адреса са које је послано
+  label_helpdesk_ticket_date: Датум тикета
+  label_helpdesk_customer: Купац
+  label_helpdesk_from: Од
+  label_helpdesk_cc: Цц
+  label_helpdesk_bcc: Всс
+  label_helpdesk_ticket_plural: Тикети хелпдеска
+  label_helpdesk_template: Шаблон хелпдеска
+  label_helpdesk_general: Општи
+  permission_edit_helpdesk_tickets: Уредити информације о тикету
+
+#2.1.0
+  label_helpdesk_ticket: Тикет хелпдеска
+  label_helpdesk_spam: Неважан мејл
+  label_helpdesk_add_cc: Додати Cc/Bcc
+  label_helpdesk_add_contact_notes: Додати први мејл као обавјештење контакта
+  text_helpdesk_customer_count: "%{count} купац(и)"
+  text_helpdesk_ticket_count: "%{count} тикет(и)"
+  label_helpdesk_tickets_report: Хелпдеск тикет извјештај
+  label_helpdesk_staff_report: Хелпдеск извјештај
+  label_helpdesk_tickets_email: Имејл
+  label_helpdesk_tickets_phone: Телефон
+  label_helpdesk_tickets_web: Веб
+  label_helpdesk_tickets_twitter: Твитер
+  label_helpdesk_ticket_source: Извор тикета
+  label_helpdesk_ticket_time: Вријема тикета
+  label_helpdesk_save_cc: Сачувати CC као контакте
+  permission_view_helpdesk_reports: Преглед извјештаја
+
+#2.1.2
+  label_helpdesk_answer_template: Шаблон за одговор
+
+#2.1.3
+  label_helpdesk_previous_tickets: Претходни тикети
+  label_helpdesk_public_tickets: Омогућити јавне тикете
+  label_helpdesk_public_title: Наслов јавне странице
+  label_helpdesk_settings_public: Јавни тикети
+  label_helpdesk_public_comments: Дозволити додатне коментаре
+  label_helpdesk_public_show_spent_time: Приказ потрошеног времена
+  label_helpdesk_public_link: Линк
+
+#2.1.4
+  label_helpdesk_ticket_new: Нови тикет
+  label_helpdesk_report_plural: Извјештаји хелпдеска
+
+#2.2.0
+  label_helpdesk_customer_company: Компанија купца
+  label_helpdesk_canned_response_plural: Механички одговор
+  label_helpdesk_new_canned_response: Нови механички одговор
+  label_helpdesk_canned_response: Механички одговор
+  permission_manage_public_canned_responses: Управљати јавним механичкким одговорима
+  permission_manage_canned_responses: Управљати механичким одговорима
+
+#2.2.1
+  my_helpdesk_tickets: Моји хелпдеск тикети
+  label_helpdesk_view_all_tickets: Видјети све тикете
+
+#2.2.3
+  label_helpdesk_tickets_conversation: Конверзација
+
+#2.2.4
+  label_helpdesk_required_custom_fields_error: Контакти не би требали захтјевати додатна поља
+
+#2.2.6
+  label_helpdesk_last_message_date: Апдејт тикета
+  label_helpdesk_ago: "%{value} од прије"
+
+#2.2.8
+  label_helpdesk_to: За
+  label_helpdesk_send_as: Послано као
+  label_helpdesk_not_send: "(Није послано)"
+  label_helpdesk_send_as_notification: Послано као обавјештење
+  label_helpdesk_send_as_message: Послано као почетна порука
+
+#2.2.9
+  label_helpdesk_incoming_mail_server: Сервер долазећих имејлова
+  label_helpdesk_outgoing_mail_server: Сервер одлазећих имјелова
+  label_helpdesk_smtp_use_default_settings: Користи подразумјевана подешавања.
+  label_helpdesk_smtp_server: СМТП сервер
+  label_helpdesk_smtp_tls: ТСЛ
+  label_helpdesk_authentication: Метод аутентикације
+  label_helpdesk_authentication_plain: Очигледно
+  label_helpdesk_authentication_login: Пријавити се
+  label_helpdesk_authentication_cram_md5: МД5 Изазов-Одговор
+  label_helpdesk_smtp_domain: Домен
+
+ #2.2.10
+  label_helpdesk_email_sending_problems: Проблеми са слањем имејла

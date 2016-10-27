@@ -1,0 +1,22 @@
+api.array :products, api_meta(:total_count => @products_count, :offset => @offset, :limit => @limit) do
+  @products.each do |product|
+    api.product do
+        api.id product.id
+        api.image(:attachment_id => product.image.id) if product.image
+        api.code product.code
+        api.name product.name
+        api.price product.price
+        api.currency product.currency
+        api.description product.description
+        api.category(:id => product.category_id, :code => product.category.code, :name => product.category.name) unless product.category.blank?
+        api.project(:id => product.project_id, :name => product.project.name) unless product.project.nil?
+        api.status_id product.status_id
+        api.author(:id => product.author_id, :name => product.author.name) unless product.author.nil?
+        api.tag_list product.tag_list
+        render_api_custom_values product.custom_field_values, api
+
+        api.created_at product.created_at
+        api.updated_at product.updated_at
+    end
+  end
+end

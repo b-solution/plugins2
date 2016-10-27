@@ -1,0 +1,13 @@
+<% if User.current.allowed_to?(:edit_mailchimp, @project, :global => true) %>
+  <% mailchimp_contacts = @contacts.select{|c| c.email.present? && c.projects.map{|project|  User.current.allowed_to?(:edit_mailchimp, project)}.any?} %>
+  <% if mailchimp_contacts.any? %>
+    <li>
+      <%= context_menu_link l(:label_mailchimp), {:controller => 'mailchimp_memberships',
+                                                         :action => 'bulk_edit',
+                                                         :contact_ids => mailchimp_contacts.map(&:id),
+                                                         :back_url => @back},
+                                    :method => :get,
+                                    :class => 'icon-mailchimp' %>
+    </li>
+  <% end %>
+<% end %>

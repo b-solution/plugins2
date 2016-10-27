@@ -1,0 +1,33 @@
+<ul>
+
+	<% if @product.present? %>
+		<li><%= context_menu_link l(:button_edit), {:controller => 'products', :action => 'edit', :id => @product}, :class => 'icon-edit', :disabled => !@can[:edit] %></li>
+	<% end %>
+
+	<li class="folder">
+		<a href="#" class="submenu"><%= l(:field_status) %></a>
+		<ul>
+		<% collection_product_statuses.each do |u| -%>
+		    <li><%= context_menu_link u[0], {:controller => 'products', :action => 'bulk_update', :ids => @products.collect(&:id), :product => {'status_id' => u[1]}, :back_url => @back}, :method => :post,
+		                              :selected => (@product && u[1] == @product.status_id), :disabled =>  !@can[:edit] %></li>
+		<% end -%>
+		</ul>
+	</li>
+
+  <% unless @project.blank? -%>
+    <% if User.current.allowed_to?(:add_orders, @project) %>
+      <li><%= context_menu_link l(:label_products_order_new), {:controller => 'orders',
+                                                               :action => 'new',
+                                                               :product_ids =>  @products.collect(&:id),
+                                                               :project_id => @project,
+                                                               :back_url => @back},
+                                :method => :get,
+                                :class => 'icon-order-add' %>
+      </li>
+      <% end %>
+	<% end %>
+
+ 	 <li><%= context_menu_link l(:button_delete), {:controller => 'products', :action => 'bulk_destroy', :ids => @products.collect(&:id)},
+                          :method => :delete, :confirm => l(:text_are_you_sure), :class => 'icon-del', :disabled => !@can[:delete] %></li>
+</ul>
+

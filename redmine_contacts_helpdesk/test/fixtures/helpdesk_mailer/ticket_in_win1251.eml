@@ -1,0 +1,44 @@
+Received: from mxfront10m.mail.yandex.net ([127.0.0.1])
+	by mxfront10m.mail.yandex.net with LMTP id Luw8wKCX
+	for <admin@somenet.foo>; Thu, 23 Jan 2014 07:21:56 +0400
+Received: from server39.hosting.com (server39.hosting.com [11.22.33.44])
+	by mxfront10m.mail.yandex.net (nwsmtp/Yandex) with ESMTPS id 7lL0OpbbJv-LuFCVrZb;
+	Thu, 23 Jan 2014 07:21:56 +0400
+	(using TLSv1 with cipher AES256-SHA (256/256 bits))
+	(Client certificate not present)
+Received: from u7886911 by server39.hosting.com with local (Exim 4.72)
+	(envelope-from <rusdancesport@gmail.com>)
+	id 1W6Arc-0001V8-2V
+	for admin@somenet.foo; Thu, 23 Jan 2014 07:21:56 +0400
+Date: Thu, 23 Jan 2014 07:21:56 +0400
+Message-Id: <E1W6Arc-0001V8-2V@server39.hosting.com>
+To: admin@somenet.foo
+Subject: Результаты соревнований СТСР
+X-PHP-Originating-Script: 2540:send_results.php
+From: RDSU Results Check <bd@somenet.foo>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="----8c65880a4c29e0f5"
+Return-Path: rusdancesport@gmail.com
+X-Yandex-Forward: 4a1d766bfd8c33858729d5998daf62e5
+
+------8c65880a4c29e0f5
+Content-Type: text/html; charset=Windows-1251
+Content-Transfer-Encoding: 8bit
+
+<html><head><title>Результаты соревнований СТСР</title></head><body>
+							<table width='100%'>
+								<tr><td nowrap valign='top'><b>Название</b>:</td><td>Танцевальный ринг - 2014</td></tr>
+								<tr><td nowrap valign='top'><b>Даты</b>:</td><td>19.01.2014</td></tr>
+								<tr><td nowrap valign='top'><b>Город</b>:</td><td>Сарапул</td></tr>
+								<tr><td nowrap valign='top'><b>Организатор</b>:</td><td>Современник, Рудавина Ольга</td></tr>
+								<tr><td nowrap valign='top'><b>Счетная комиссия</b>:</td><td>Корсиков Алексей Николаевич, Ижевск</td></tr>
+							</table>
+							</body></html>
+------8c65880a4c29e0f5
+Content-Type: application/xml; name="2014_01_23__07_21_39.xml"
+Content-Disposition: attachment; filename="2014_01_23__07_21_39.xml"
+Content-Transfer-Encoding: base64
+
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0id2luZG93cy0xMjUxIj8+DQo8RGFuY2VEYXRhIHZlcnNpb249IjIuMSI+PEdyb3VwRGF0YT48SGVhZGVyIGxhbmd1YWdlPSJSdXNzaWFuIj48VGl0bGUgc3RhdHVzPSLQ7vHx6Onx6u7lIPHu8OXi7e7i4O3o5SDq4PIuIEIiIGRhdGVDb21wPSIxOS4wMS4yMDE0Ij7S4O325eLg6/zt++kg8Ojt4yAtIDIwMTQ8L1RpdGxlPjxDaXR5PtHg8ODv8+s8L0NpdHk+PE9yZ2FuaXplcj7R7uLw5ezl7e3o6iwg0PPk4OLo7eAgzuv84+A8L09yZ2FuaXplcj48SW5pdGlhdG9yPtTS0SDQ5fHv8+Hr6OroINPk7PPw8uj/PC9Jbml0aWF0b3I+PENvdW50cnk+0O7x8ej/PC9Db3VudHJ5PjxSZWdpb25JjMyMjIyMjMyMzwvUmVzdWx0PjxSZXN1bHQgbj0iNSIgcGxhY2U9IjEiIGhlYWQ9IjEiPjExMTExMTIxMTwvUmVzdWx0PjxSZXN1bHQgbj0iNiIgcGxhY2U9IjQiIGhlYWQ9IjEiPjQ1MzQ0NTE1MjwvUmVzdWx0PjwvRGFuY2U+PC9EYW5jZXM+PC9Sb3VuZD48L1Jlc3VsdHM+PC9Hcm91cERhdGE+PC9EYW5jZURhdGE+DQo=
+------8c65880a4c29e0f5--
+

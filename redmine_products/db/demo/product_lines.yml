@@ -1,0 +1,24 @@
+<%
+  puts "Loading product lines..."
+
+  names = %w(CRM Invoices Helpdesk People Finance Questions)
+  codes = %w(001 002 003 004 005 006)
+  currencies = %w(USD EUR GBR RUR)
+  contacts = Contact.limit(rand(100) + 1).all
+  users = User.limit(rand(100) + 1).all
+%>
+
+<% Order.all.each_with_index do |order, index| %>
+  <% for i in (0 .. (rand(6))) do %>
+product_line_<%= order.id %>_<%= i %>:
+  container_type   : <%= Order %>
+  container_id     : <%= order.id %>
+  product_id       : <%= i + 1 %> # name has a limit of 64 characters.
+  description      : <%= "#{names[i]} product description" %>
+  quantity         : <%= (rand(10) + 1)  %>
+  tax              : <%= rand(10) == 1 ? 20 : 0 %>
+  discount         : <%= rand(10) == 1 ? rand(20) : 0 %>
+  price            : <%= rand(300) + 59 %>
+  position         : <%= i + 1 %>
+  <% end %>
+<% end %>

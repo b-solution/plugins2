@@ -1,0 +1,26 @@
+<%= l(:text_products_order_updated, :number => "##{@order.number}", :author => h(@order.author)) %>
+
+<% unless @status_was.blank? %>
+* <%=l(:text_products_order_status_changed, :old => (@status_was ? @status_was.name : ""), :new => (@order.status ? @order.status.name : "")) %>
+<% end %>
+<% unless @amount_was.blank? %>
+* <%=l(:text_products_order_amount_changed, :old => price_to_currency(@order_amount_was, @order.currency), :new => @order.amount_to_s) %>
+<% end %>
+
+----------------------------------------
+<%= order_url(@order) %>
+
+* <%= l(:label_products_order_date) %>: <%= format_date(@order.order_date) %>
+* <%= l(:label_products_number) %>: <%= @order.number %>
+* <%= l(:label_products_amount) %>: <%= @order.amount_to_s %>
+* <%= l(:label_products_order_subject) %>: <%= @order.subject %>
+<% if @order.contact %>
+* <%= l(:label_contact) %>: <%= @order.contact.name  %>
+<% end %>
+
+<%= @order.description %>
+
+----------------------------------------
+<% @order.lines.each_with_index do |line, index| %>
+  <%= index %>. <%= product_line_to_s(line) %>
+<% end %>

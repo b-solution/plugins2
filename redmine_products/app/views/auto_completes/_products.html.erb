@@ -1,0 +1,12 @@
+<%= raw @products.map {|product| {
+      'id' => product.id,
+      'code' => product.code,
+      'info' => "#{product_image_tag(product, :size => 16)} #{product.code} - #{product.name}#{' (' + product.price_to_s + ')' unless product.price.blank? }".html_safe,
+      'name' => product.name,
+      'image' => product_image_tag(product, :size => 16),
+      'price' => product.price_to_s,
+      'currency' => product.currency,
+      'value' => product.code
+      }
+    }.to_json
+%>

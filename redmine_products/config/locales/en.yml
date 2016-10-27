@@ -1,0 +1,97 @@
+# English strings go here for Rails i18n
+en:
+  label_product: Product
+  label_product_plural: Products
+  label_products_code: Code
+  label_products_price: Price
+  label_products_status: Status
+  label_products_description: Description
+  label_products_name: Name
+  label_products_status_active: Active
+  label_products_status_inactive: Inactive
+  label_products_new: New product
+  label_products_edit: Edit product
+  label_products_line_tax: Tax
+  label_products_line_discount: Discount
+  label_order: Order
+  label_order_plural: Orders
+  label_products_quantity: Quantity
+  label_products_total: Total
+  label_products_order_date: Order date
+  label_products_closed_date: Closed date
+  label_products_order_lines: Order lines
+  label_products_order_placed: New order placed
+  label_products_product_created: New product created
+  label_products_number: Number
+  label_products_currency: Currency
+  label_products_amount: Amount
+  label_products_order_new: New order
+  label_products_order_edit: Edit order
+  label_products_order_status_plural: Order statuses
+  label_products_order_status_new: New order status
+  label_products_order_subject: Subject
+  label_products_order_unit_price: Unit price
+  label_products_show_in_lines: Show in lines
+  label_products_show_in_top_menu: Show in top menu
+  label_products_show_in_app_menu: Show in app menu
+  label_products_default_currency: Default currency
+  label_products_cross_project_contacts: Cross project contacts
+  label_products_select_companies: Select companies
+  label_products_order_last_number: 'Last order number was #%{number}'
+  label_products_order_internal: Internal order
+  label_products_order_status_closed: Closed
+  label_products_ordered: Ordered
+  label_products_image: Image
+  label_products_recent: Recent products
+  label_products_orders_recent: Recent orders
+  error_products_unable_delete_order_status: Unable to delete order status
+  label_products_add_line: Add line
+  label_attribute_of_product: "Product's %{name}"
+  label_attribute_of_lines: "Product line's %{name}"
+  text_products_order_added: "Order %{number} has been created by %{author}."
+  text_products_order_updated: "Order %{number} has been updated by %{author}."
+  text_products_order_status_changed: "Order status was changed from %{old} to %{new}"
+  text_products_order_amount_changed: "Order amount was changed from %{old} to %{new}"
+  label_products_select: Select product
+  label_products_item: Item
+  label_products_subtotal: Subtotal
+  label_products_tax_total: Tax amount
+  label_products_units_total: Total units
+  label_products_add: Add product
+  label_products_order_added: Order added
+  label_products_order_updated: Order updated
+  label_products_order_comment_added: Comment added to an order
+  label_products_add_description: add description
+  label_products_search_for_products: Search for products to add
+  label_products_add_product_plural: Add products
+  label_products_search_for_product: Search for product
+  label_products_create_invoice: Create invoice
+
+  permission_manage_product_relations: Manage products relations
+
+  #1.1.0
+  label_products_category: Category
+  label_products_category_plural: Categories
+  label_products_is_bundle: Is bundle
+  label_product_category_new: New category
+  label_products_parent: Parent
+  label_products_category_filter: Product's category
+
+  #1.1.1
+  project_module_products: Products
+  project_module_orders: Orders
+  permission_view_products: View products
+  permission_add_products: Add products
+  permission_edit_products: Edit products
+  permission_delete_products: Delete products
+  permission_import_products: Imporst products
+  permission_save_products_queries: Save products queries
+  permission_manage_public_products_queries: Manage public products queries
+  permission_view_orders: View orders
+  permission_add_orders: Add orders
+  permission_edit_orders: Edit orders
+  permission_delete_orders: Delete orders
+  permission_comment_orders: Comment orders
+  permission_import_orders: Import orders
+  permission_save_orders_queries: Save orders queries
+  permission_manage_public_orders_queries: Manage public orders queries

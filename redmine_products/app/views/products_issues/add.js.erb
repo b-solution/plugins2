@@ -1,0 +1,2 @@
+<% content = @products.map{|product| fields_for(:issue, Issue.new) {|f| f.fields_for(:products_issues, products_issue =ProductsIssue.new(:product => product),  :child_index => Time.now.to_i + rand(100)){|builder| render(:partial => "products_issues/product_fields", :locals => {:f => builder, :products_issue => products_issue})}}}.join(' ').html_safe %>
+$('#products_inputs').append('<%= escape_javascript content %>');

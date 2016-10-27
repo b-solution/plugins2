@@ -1,0 +1,7 @@
+<%= raw @deals.map {|deal| {
+      'id' => deal.id,
+      'label' => "#{deal.full_name} (#{deal.info})",
+      'value' => deal.id
+      }
+    }.to_json
+%>

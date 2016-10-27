@@ -1,0 +1,33 @@
+<style>
+  #products_for_issue {height: 200px; overflow:auto;}
+  #products_for_issue label {display: block;}
+  input#product_search{width:90%;}
+</style>
+
+<h3 class="title"><%= l(:label_products_add_product_plural) %></h3>
+
+<%= form_tag({:controller => 'products_issues',
+              :action => 'add',
+              :issue_id => @issue,
+              :project_id => @project},
+             :remote => true,
+             :method => :post,
+             :id => 'add-product-form') do %>
+
+  <p><%= label_tag 'product_search', l(:label_products_search_for_product) %>:<%= text_field_tag 'product_search', nil, :placeholder => l(:label_crm_contact_search) %></p>
+  <%= javascript_tag "observeSearchfield('product_search', 'products_for_issue', '#{escape_javascript url_for(:controller => 'products_issues',
+    :action => 'autocomplete_for_product', :project_id => @project, :issue_id => @issue)}')" %>
+
+  <div id="products_for_issue">
+    <%= products_check_box_tags 'products_issue[product_ids][]', Product.includes(:image).visible.limit(100).all - (@issue ? @issue.products : []) %>
+  </div>
+
+  <p class="buttons">
+    <%= submit_tag l(:button_add), :name => nil, :onclick => "hideModal(this);" %>
+    <%= submit_tag l(:button_cancel), :name => nil, :onclick => "hideModal(this);", :type => 'button' %>
+  </p>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag :products, :plugin => 'redmine_products'  %>
+<% end %>

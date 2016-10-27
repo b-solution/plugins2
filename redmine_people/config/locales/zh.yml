@@ -1,0 +1,70 @@
+# encoding: utf-8
+# Simplified Chinese strings go here for Rails i18n
+# Author: Salivaxiu@163.com
+# Based on file: en.yml
+
+zh:
+  label_people: 人员
+  label_people_edit_person: 编辑个人信息
+  label_people_new_person: 新人员
+  label_people_group_plular: 组
+  label_people_search: 搜索名字
+  label_people_show_on_map: 地图上显示
+  label_people_person: 人员
+  label_people_all: 显示所有人员
+  label_people_next_birthdays: 马上过生日
+  label_people_new_people: 新人员
+  label_people_male: 男
+  label_people_female: 女
+  label_people_settings: 人员设置
+
+  button_people_edit_profile: 编辑属性
+
+  label_people_avatar: 纸娃娃
+  label_people_job_title: 职位
+  label_people_phone: 电话
+  label_people_phone_plural: 手机
+  label_people_skype: Skype
+  label_people_twitter: Twitter
+  label_people_facebook: Facebook
+  label_people_linkedin: LinkedIn
+  label_people_middlename: 中间名
+  label_people_background: 背景信息
+  label_people_address: 地址
+  label_people_gender: 性别
+  label_people_birthday: 生日
+  label_people_appearance_date: 见面日期
+  label_people_age: 年龄
+
+  people_permission_edit_people: 编辑人员
+  people_permission_view_people: 浏览人员
+  people_permission_add_people: 增加人员
+  people_permission_delete_people: 删除人员
+  people_permission_add_attachments: 增加附件
+
+  #0.0.2
+  label_people_acl_settings: ACL设置
+  label_people_visibility: 知名度
+  label_people_visibility_select: 显示人员
+  label_people_visibility_resistered: 对于注册用户
+  label_people_visibility_selected: 对于选定用户
+  label_people_visibility_anonymous: 对于匿名用户
+
+  #0.0.3
+  label_department_plural: 部门
+  label_department_new: 新部门
+  label_department: 系
+  label_department_head: 头
+  label_people_department: 系
+  label_people_at_department: 在
+  field_department_parent: 的子部门
+  people_permission_edit_departments: 编辑部门
+
+  #0.1.5
+  people_permission_delete_departments: 删除部门
+
+  #0.1.6
+  label_people_new_mail: 新消息
+
+  #0.1.7
+  label_people_show_for_registered_users: 显示注册用户的人员

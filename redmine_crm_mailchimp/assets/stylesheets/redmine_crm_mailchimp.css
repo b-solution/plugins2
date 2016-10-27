@@ -1,0 +1,20 @@
+.icon-mailchimp, #admin-menu a.mailchimp-settings { background-image: url(../images/mailchimp.png); }
+.mailchimp-loading {
+  background-color: #eee;
+  border: 1px solid #bbb;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.6em;
+  opacity: 0.5;
+}
+
+.mailchimp-loading span {
+  background-position: 0% 40%;
+  background-repeat: no-repeat;
+  background-image: url('../../../images/loading.gif');
+  padding-left: 26px;
+  vertical-align: bottom;
+}
+.icon-sync { background-image: url(../images/sync.png); }
+.icon-sync-ok { background-image: url(../../../images/true.png); }
+.pull-right{ float: right; }

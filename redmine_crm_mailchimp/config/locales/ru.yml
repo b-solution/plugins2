@@ -1,0 +1,34 @@
+ru:
+  label_mailchimp: Mailchimp
+  label_mailchimp_settings: Mailchimp
+  label_mailchimp_api_key: Ключ API
+  label_mailchimp_name: Название
+  label_mailchimp_subscribers: Подписчики
+  label_mailchimp_opens: Открытий
+  label_mailchimp_clicks: Щелчков
+  label_mailchimp_date_created: Создан
+  label_mailchimp_add_to_list: Добавить в рассылку
+  label_mailchimp_subscribed: Подписан на лист
+  label_mailchimp_lists: Списки рассылки
+  label_mailchimp_campaigns: Кампании
+  label_mailchimp_id: №
+  label_mailchimp_title: Название
+  label_mailchimp_subject: Тема
+  label_mailchimp_send_time: Отправлено
+  label_mailchimp_confirm_unlink: Отписать этот адрес?
+  label_mailchimp_unsubscribed: Отписан
+  label_mailchimp_manage_lists: Управление листами рассылки
+  label_mailchimp_tags: 'Тэги: '
+  label_mailchimp_not_selected: Не выбран
+  label_mailchimp_remove_from_list: Удалить из рассылки
+  permission_view_mailchimp: Просмотр настроек
+  permission_edit_mailchimp: Изменение настроек
+  label_mailchimp_sync: Синхронизация
+  label_mailchimp_contact_query: Запрос контактов
+  label_mailchimp_list: Список Mailchimp
+  label_mailchimp_add: Добавить
+  label_mailchimp_delete: Удалить
+  label_mailchimp_delete_confirm: Действительно удалить эту связку?
+  label_mailchimp_no_lists_available: Нет листов рассылки
+  label_mailchimp_no_queries_available: Нет сохраненных запросов
+  label_mailchimp_show_links: Показывать ссылки

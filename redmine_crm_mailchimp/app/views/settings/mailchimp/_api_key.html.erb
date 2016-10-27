@@ -1,0 +1,11 @@
+<p class='mailchimp-settings'>
+  <label><%= l(:label_mailchimp_show_links) %></label>
+  <%= check_box_tag 'settings[show_links]', "1", @settings['show_links'] %>
+</p>
+<p class='mailchimp-settings'>
+  <label><%= l(:label_mailchimp_api_key) %></label>
+    <%= text_field_tag 'settings[api_key]', @settings['api_key'], :size => 60 %>
+    <%= image_tag('true.png', :id => 'api-test-success', :style => 'display: none') %>
+    <%= image_tag('exclamation.png', :id => 'api-test-failure', :style => 'display: none') %>
+  <br>
+</p>

@@ -1,0 +1,3 @@
+<span class="people-tags-edit">
+   <%= text_field_tag 'person[tag_list]', "#{@person.tags.map(&:name).join(',').html_safe}", :size => 10, :class => 'hol', :id => "allowSpacesTags" %><%= people_tagsedit_with_source_for('#allowSpacesTags', autocomplete_tags_people_path) %>
+</span>

@@ -1,0 +1,82 @@
+# encoding: utf-8
+# Simplified Chinese strings go here for Rails i18n
+# Author: zhoutt
+# Based on file: en.yml
+
+zh:
+  label_product: 产品
+  label_product_plural: 产品
+  label_products_code: 代码
+  label_products_price: 价格
+  label_products_status: 状态
+  label_products_description: 说明
+  label_products_name: 名称
+  label_products_status_active: 已激活
+  label_products_status_inactive: 未激活
+  label_products_new: 新建产品
+  label_products_edit: 编辑产品
+  label_products_line_tax: 税
+  label_products_line_discount: 折扣
+  label_order: 顺序
+  label_order_plural: 顺序
+  label_products_quantity: 数量
+  label_products_total: 总额
+  label_products_order_date: 订单日期
+  label_products_closed_date: 关闭日期
+  label_products_order_lines: 订单明细
+  label_products_order_placed: 新下订单
+  label_products_product_created: 创建的新产品
+  label_products_number: 数量
+  label_products_currency: 货币
+  label_products_amount: 数量
+  label_products_order_new: 新订单
+  label_products_order_edit: 编辑订单
+  label_products_order_status_plural: 订单状态
+  label_products_order_status_new: 新建订单状态
+  label_products_order_subject: 订单主题
+  label_products_order_unit_price: 单价
+  label_products_show_in_lines: 在行里显示
+  label_products_show_in_top_menu: 在顶部菜单中显示
+  label_products_show_in_app_menu: 在应用菜单中显示
+  label_products_default_currency: 默认货币
+  label_products_cross_project_contacts: 交叉项目联系人
+  label_products_select_companies: 选择公司
+  label_products_order_last_number: '最后的订单编号是#%{number}'
+  label_products_order_internal: 内部订单
+  label_products_order_status_closed: 关闭
+  label_products_ordered: 已订
+  label_products_image: 图片
+  label_products_recent: 近期产品
+  label_products_orders_recent: 近期订单
+  error_products_unable_delete_order_status: 不能删除订单状态
+  label_products_add_line: 增加行
+  label_attribute_of_product: "产品的 %{name}"
+  label_attribute_of_lines: "生产线的 %{name}"
+  text_products_order_added: "订单 %{number} 已经由 %{author}创建."
+  text_products_order_updated: "订单 %{number} 已经由 %{author}更新."
+  text_products_order_status_changed: "订单状态已经被更新从 %{old} to %{new}"
+  text_products_order_amount_changed: "订单量已经被更改从 %{old} to %{new}"
+  label_products_select: 选择产品
+  label_products_item: 项目
+  label_products_subtotal: 小计
+  label_products_tax_total: 税额
+  label_products_units_total: 总量
+  label_products_add: 新建产品
+  label_products_order_added: 新建的订单
+  label_products_order_updated: 订单更新
+  label_products_order_comment_added: 将注释添加至订单
+  label_products_add_description: 增加说明
+  label_products_search_for_products: 搜索产品添加
+  label_products_add_product_plural: 增加产品
+  label_products_search_for_product: 搜素产品
+  label_products_create_invoice: 创建发票
+
+  permission_manage_product_relations: 管理产品关系
+
+  #1.1.0
+  label_products_category: 分类
+  label_products_category_plural: 分类
+  label_products_is_bundle: 绑定
+  label_product_category_new: 新建分类
+  label_products_parent: 归属
+  label_products_category_filter: 产品的分类

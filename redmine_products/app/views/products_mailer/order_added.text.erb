@@ -1,0 +1,19 @@
+<%= l(:text_products_order_added, :number => "##{@order.number}", :author => h(@order.author)) %>
+
+----------------------------------------
+<%= order_url(@order) %>
+
+* <%= l(:label_products_order_date) %>: <%= format_date(@order.order_date) %>
+* <%= l(:label_products_number) %>: <%= @order.number %>
+* <%= l(:label_products_amount) %>: <%= @order.amount_to_s %>
+* <%= l(:label_products_order_subject) %>: <%= @order.subject %>
+<% if @order.contact %>
+* <%= l(:label_contact) %>: <%= @order.contact.name  %>
+<% end %>
+
+<%= @order.description %>
+
+----------------------------------------
+<% @order.lines.each_with_index do |line, index| %>
+  <%= index %>. <%= product_line_to_s(line) %>
+<% end %>

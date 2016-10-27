@@ -1,0 +1,34 @@
+<table class="list issues" id='mailchimp_list_assignments'>
+  <thead>
+    <tr>
+      <th>
+        <%= l(:label_mailchimp_contact_query) %>
+      </th>
+      <th>
+        <%= l(:label_mailchimp_list) %>
+      </th>
+      <th>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <%
+      @mailchimp_settings = RedmineCrmMailchimp::Settings.new
+      @mailchimp_settings.assignments.each do |assignment|
+    %>
+        <%= render :partial =>'settings/mailchimp/assignment_form', :locals => { :assignment => assignment } %>
+      <% end %>
+    <tr>
+      <td>
+      </td>
+      <td>
+      </td>
+      <td>
+        <%= link_to l(:label_mailchimp_add), 'javascript:void(0)', :class => 'icon icon-add pull-right', :id => 'add-new-assignment-button' %>
+      </td>
+  </tbody>
+</table>
+<script type='text/javascript'>
+  mailchimpAssignmentFormHtml = '<%= j(render('settings/mailchimp/assignment_form')) %>';
+  mailchimpDeleteConfirmText = '<%= l(:label_mailchimp_delete_confirm) %>';
+</script>

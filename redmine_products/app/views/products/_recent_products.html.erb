@@ -1,0 +1,12 @@
+<div class="recent-products products-data">
+  <h3><%= l(:label_products_recent) %></h3>
+  <% Product.by_project(@project).visible.limit(5).order("#{Product.table_name}.created_at DESC").each do |product| %>
+  <div class="product">
+    <div class="image"><%= product_image_tag(product, :size => 32) %></div>
+    <div class="data">
+        <h4 class="name"><%= link_to product.name, product_path(product) %></h4>
+        <p class="info"><%= product.price_to_s %></p>
+    </div>
+  </div>
+  <% end %>
+</div>

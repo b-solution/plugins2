@@ -1,0 +1,26 @@
+<div class="contextual">
+<% if User.current.allowed_people_to?(:save_people_queries) %>
+<%= link_to l(:label_query_new), { :controller => 'people_queries', :action => 'new' }, :class => 'icon icon-add'  %>
+<% end %>
+</div>
+
+<h2><%= l(:label_query_plural) %></h2>
+<% if @queries.empty? %>
+  <p><i><%=l(:label_no_data)%></i></p>
+<% else %>
+  <table class="list">
+  <% @queries.each do |query| %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td class="name">
+        <%= link_to h(query.name), :controller => "people", :action => 'index', :query_id => query %>
+      </td>
+      <td class="buttons">
+        <% if query.editable_by?(User.current) %>
+        <%= link_to l(:button_edit), edit_people_query_path(query), :class => 'icon icon-edit' %>
+        <%= delete_link people_query_path(query) %>
+      <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>

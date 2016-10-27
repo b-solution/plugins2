@@ -1,0 +1,5 @@
+<h1><%= link_to("#{l(:label_order)} ##{@order.number}: #{@order.status if @order.status} - #{@order.amount_to_s}", order_url(@order)) %></h1>
+
+<p><%= l(:text_user_wrote, :value => h(@comment.author)) %></p>
+
+<%= textilizable @comment, :comments, :only_path => false %>

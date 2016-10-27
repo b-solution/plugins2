@@ -1,0 +1,6 @@
+<%= "#{l(:label_order)} ##{@order.number}: #{@order.status if @order.status} - #{@order.amount_to_s}" %>
+<%= order_url(@order) %>
+
+<%= l(:text_user_wrote, :value => @comment.author) %>
+
+<%= @comment.comments %>

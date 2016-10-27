@@ -1,0 +1,155 @@
+# English strings go here for Rails i18n
+fr:
+  label_helpdesk: Helpdesk
+  label_helpdesk_auto_answer_template: Modèle de notification de réponse par email
+  text_helpdesk_answer_macros: "Macros disponibles : %{macro}"
+  label_is_send_mail: Envoyer cette note au contact
+  label_send_auto_answer: Envoyer la notification
+  label_received_from: Reçu de
+  label_sent_to: Envoyé à
+  project_module_contacts_helpdesk: Helpdesk
+  permission_send_response: Envoyer la réponse au contact
+  permission_edit_helpdesk_settings: Editer les paramètres Helpdesk
+  label_not_create_contacts: Ne pas créer de nouveau contacts
+  field_created_contact_tags: Ajouter les tags après la création
+  label_helpdesk_save_as_attachment: Sauvegarder les emails en pièces jointes
+
+#1.0.2
+  label_helpdesk_assign_author: Définir l'expéditeur comme auteur
+
+#1.0.3
+  label_helpdesk_answered_status: État pour un ticket auquel il a été répondu
+  label_helpdesk_reopen_status: État pour réouverture d'un ticket
+  label_helpdesk_tracker: Tracker du ticket
+  label_helpdesk_assigned_to: Affecter le ticket à
+  label_helpdesk_lifetime: Durée de vie du ticket
+  label_helpdesk_server_settings: Paramètres du serveur d'emails
+  label_helpdesk_protocol: Protocole
+  label_helpdesk_host: Hôte
+  label_helpdesk_port: Port
+  label_helpdesk_username: Nom d'utilisateur
+  label_helpdesk_password: Mot de passe
+  label_helpdesk_ssl: SSL
+  label_helpdesk_imap_folder: Dossier IMAP
+  label_helpdesk_move_on_success: Si réussite, déplacer vers
+  label_helpdesk_move_on_failure: Si échec, déplacer vers
+  label_helpdesk_apop: APOP
+  label_helpdesk_delete_unprocessed: Supprimer les messages non traités
+  label_helpdesk_first_answer_template: Modèle
+  label_helpdesk_test_connection: Tester la connexion
+  label_helpdesk_get_mail: Récupérer les emails
+  label_helpdesk_get_mail_success: "%{count} email(s) traités"
+  label_helpdesk_css: Feuille de style des emails (CSS)
+  label_helpdesk_original: Original
+
+#1.0.4
+  label_helpdesk_blacklist: Blacklister les emails
+  label_helpdesk_previous_issues: Tickets précédents du client
+  permission_view_helpdesk_tickets: Afficher les tickets Helpdesk
+  label_helpdesk_last_message: Message précédent
+  label_helpdesk_enable_modules: Le module Contacts et demandes doit être activé pour ce projet
+  label_helpdesk_customer_profile: Profil client
+  label_helpdesk_show_contact_card: Afficher les profils clients
+
+#2.0.0
+  label_helpdesk_send_note_by_default: Par défaut, envoyer la note
+  label_helpdesk_ticket_attributes: Attributs du ticket
+  label_helpdesk_to_address: Destinataire
+  label_helpdesk_from_address: Expéditeur
+  label_helpdesk_ticket_date: Date du ticket
+  label_helpdesk_customer: Client
+  label_helpdesk_from: De
+  label_helpdesk_cc: Cc
+  label_helpdesk_bcc: Cci
+  label_helpdesk_ticket_plural: Tickets Helpdesk
+  label_helpdesk_template: Modèle Helpdesk
+  label_helpdesk_general: Général
+  permission_edit_helpdesk_tickets: Modifier les infos du ticket
+
+#2.1.0
+  label_helpdesk_ticket: Ticket
+  label_helpdesk_spam: Spam
+  label_helpdesk_add_cc: Ajouter Cc/Cci
+  label_helpdesk_add_contact_notes: Ajouter le premier email aux notes du contact
+  text_helpdesk_customer_count: "%{count} client(s)"
+  text_helpdesk_ticket_count: "%{count} ticket(s)"
+  label_helpdesk_tickets_report: Rapport tickets
+  label_helpdesk_staff_report: Rapport collaborateurs
+  label_helpdesk_tickets_email: Email
+  label_helpdesk_tickets_phone: Téléphone
+  label_helpdesk_tickets_web: Web
+  label_helpdesk_tickets_twitter: Twitter
+  label_helpdesk_ticket_source: Source du ticket
+  label_helpdesk_ticket_time: Heure du ticket
+  label_helpdesk_save_cc: Enregistrer les personnes en copie dans les contacts
+  permission_view_helpdesk_reports: Afficher les rapports
+
+#2.1.2
+  label_helpdesk_answer_template: Modèle de réponse
+
+#2.1.3
+  label_helpdesk_previous_tickets: Tickets précédents
+  label_helpdesk_public_tickets: Activer les tickets publics
+  label_helpdesk_public_title: Titre de la page publique
+  label_helpdesk_settings_public: Tickets publics
+  label_helpdesk_public_comments: Autoriser l'ajout de commentaires
+  label_helpdesk_public_show_spent_time: Afficher le temps passé
+  label_helpdesk_public_link: Lien public
+
+#2.1.4
+  label_helpdesk_ticket_new: Nouveau ticket
+  label_helpdesk_report_plural: Rapports tickets
+
+#2.2.0
+  label_helpdesk_customer_company: Entreprise du client
+  label_helpdesk_canned_response_plural: Textes prédéfinis
+  label_helpdesk_new_canned_response: Nouveau texte prédéfini
+  label_helpdesk_canned_response: Texte prédéfini
+  permission_manage_public_canned_responses: Gérer les réponses prédéfinies publiques
+  permission_manage_canned_responses: Gérer les réponses prédéfinies
+
+#2.2.1
+  my_helpdesk_tickets: Mes tickets
+  label_helpdesk_view_all_tickets: Afficher tous les tickets
+
+#2.2.3
+  label_helpdesk_tickets_conversation: Conversation
+
+#2.2.4
+  label_helpdesk_required_custom_fields_error: Les contacts ne devraient pas avoir les champs personnalisés requis
+
+#2.2.6
+  label_helpdesk_last_message_date: Ticket mis à jour
+  label_helpdesk_ago: "il y a %{value}"
+
+#2.2.8
+  label_helpdesk_to: À
+  label_helpdesk_send_as: Envoyer en tant que
+  label_helpdesk_not_send: "(Non envoyé)"
+  label_helpdesk_send_as_notification: Envoyer en tant que notification
+  label_helpdesk_send_as_message: Envoyer en tant que premier message
+
+#2.2.9
+  label_helpdesk_incoming_mail_server: Serveur de mails entrants
+  label_helpdesk_outgoing_mail_server: Serveur de mails sortants
+  label_helpdesk_smtp_use_default_settings: Utiliser les paramètres par défaut
+  label_helpdesk_smtp_server: Serveur SMTP
+  label_helpdesk_smtp_tls: TLS
+  label_helpdesk_authentication: Méthode d'authentification
+  label_helpdesk_authentication_plain: Simple
+  label_helpdesk_authentication_login: Login
+  label_helpdesk_authentication_cram_md5: MD5 Challenge-Response
+  label_helpdesk_smtp_domain: Domaine
+
+ #2.2.10
+  label_helpdesk_email_sending_problems: Une erreur est survenue lors de l'envoi d'un email
+
+ #2.3.0
+  label_helpdesk_ticket_reaction_time: Temps de réaction
+  label_helpdesk_ticket_first_response_time: Temps pour la première réponse
+  label_helpdesk_ticket_resolve_time: Temps de résolution
+  label_helpdesk_ticket_last_response_time: Attente de réponse
+  field_helpdesk_ticket: Ticket Helpdesk
+  text_helpdesk_to_address_cant_be_blank: Le champ À ne peut pas être laissé vide
+  text_helpdesk_message_body_cant_be_blank: Le corps du message ne peut pas être laissé vide
+  text_helpdesk_from_address_cant_be_blank: Le champ De ne peut pas être laissé vide

@@ -1,0 +1,9 @@
+<p>
+  <label><%= l(:label_helpdesk_vote_settings) %></label>
+  <%= check_box_tag 'settings[helpdesk_vote_accept]', 1, @settings[:helpdesk_vote_accept] %>
+</p>
+
+<p>
+  <label><%= l(:label_helpdesk_vote_comment_settings) %></label>
+  <%= check_box_tag 'settings[helpdesk_vote_comment_accept]', 1, @settings[:helpdesk_vote_comment_accept] %>
+</p>

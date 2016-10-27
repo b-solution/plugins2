@@ -1,0 +1,13 @@
+<% if @contact && (@project = User.current.allowed_to?(:add_orders, @project) ? @project : Order.allowed_target_projects.first) %>
+    <li><%= context_menu_link l(:label_products_order_new), {:controller => 'orders',
+                                                             :action => 'new',
+                                                             :contact_id => @contact,
+                                                             :project_id => @project,
+                                                             :back_url => @back},
+                              :method => :get,
+                              :class => 'icon-order-add' %>
+    </li>
+
+<% end %>
+
+

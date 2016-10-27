@@ -1,0 +1,70 @@
+# English strings go here for Rails i18n
+pl:
+  label_product: Produkt
+  label_product_plural: Produkty
+  label_products_code: Kod
+  label_products_price: Cena
+  label_products_status: Status
+  label_products_description: Opis
+  label_products_name: Nazwa
+  label_products_status_active: Aktywny
+  label_products_status_inactive: Nieaktywny
+  label_products_new: Nowy produkt
+  label_products_edit: Edit product
+  label_products_line_tax: Podatek
+  label_products_line_discount: Rabat
+  label_order: Zamówienie
+  label_order_plural: Zamówienia
+  label_products_quantity: Ilość
+  label_products_total: Total
+  label_products_order_date: Data zamówienia
+  label_products_closed_date: Closed date
+  label_products_order_lines: Order lines
+  label_products_order_placed: Złożono nowe zamówienie
+  label_products_product_created: Stworzono nowy produkt
+  label_products_number: Numer
+  label_products_currency: Waluta
+  label_products_amount: Amount
+  label_products_order_new: Nowe zamówienie
+  label_products_order_edit: Edytuj zamówienie
+  label_products_order_status_plural: Order statuses
+  label_products_order_status_new: New order status
+  label_products_order_subject: Temat/Podmiot
+  label_products_order_unit_price: Unit price
+  label_products_show_in_lines: Show in lines
+  label_products_show_in_top_menu: Pokaż w górnym menu
+  label_products_show_in_app_menu: Pokaż w menu aplikacji
+  label_products_default_currency: Waluta domyślna
+  label_products_cross_project_contacts: Cross project contacts
+  label_products_select_companies: Select companies
+  label_products_order_last_number: 'Last order number was #%{number}'
+  label_products_order_internal: Internal order
+  label_products_order_status_closed: Closed
+  label_products_ordered: Ordered
+  label_products_image: Obrazek
+  label_products_recent: Ostatnie produkty
+  label_products_orders_recent: Ostatnie zamówienia
+  error_products_unable_delete_order_status: Enable to delete order status
+  label_products_add_line: Dodaj linię
+  label_attribute_of_product: "Product's %{name}"
+  label_attribute_of_lines: "Product line's %{name}"
+  text_products_order_added: "Order %{number} has been created by %{author}."
+  text_products_order_updated: "Order %{number} has been updated by %{author}."
+  text_products_order_status_changed: "Order status was changed from %{old} to %{new}"
+  text_products_order_amount_changed: "Order amount was changed from %{old} to %{new}"
+  label_products_select: Wybierz produkt
+  label_products_item: Pozycja
+  label_products_subtotal: Subtotal
+  label_products_tax_total: Tax amount
+  label_products_units_total: Total units
+  label_products_add: Dodaj produkt
+  label_products_order_added: Złożone zamówienie
+  label_products_order_updated: Order updated
+  label_products_order_comment_added: Comment added to an order
+  label_products_add_description: dodaj opis
+  label_products_search_for_products: Search for products to add
+  label_products_add_product_plural: Dodaj produkty
+  label_products_search_for_product: Search for product
+  label_products_create_invoice: Utwórz fakturę
+
+  permission_manage_product_relations: Zarządzaj relacjami produktów

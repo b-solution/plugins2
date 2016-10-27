@@ -1,0 +1,6 @@
+<% if tags_cloud %>
+  <span id="single_tags">
+      <h3><%= l(:label_people_tags_plural) %></h3>
+       <span class="tag_list"><%= tags_cloud.map{|tag| people_tag_link(tag.name, :count => tag.count)}.join(' ').html_safe %></span>
+  </span>
+<% end %>

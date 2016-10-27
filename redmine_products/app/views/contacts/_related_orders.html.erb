@@ -1,0 +1,25 @@
+<% orders = @contact.orders.visible.order(:status_id).order(:created_at) %>
+<div id="orders">
+
+<div class="contextual">
+  <%= link_to_if_authorized l(:label_products_order_new), {:controller => 'orders', :action => 'new', :project_id => @project, :contact_id => @contact} %>
+</div>
+
+<h3><%= "#{l(:label_order_plural)}" %> <%= (" - " + prices_collection_by_currency(@contact.orders_balance).join(' / ')).html_safe if @contact.orders_balance %></h3>
+
+<% if orders.any? %>
+  <table class="related_orders">
+  <% orders.each do |order| %>
+    <tr>
+      <td class="name" style="vertical-align: top;">
+        <p>
+          <%= order_status_tag(order.status) if order.status %>
+          <%= link_to "##{order.number} - #{format_time(order.order_date)} #{': - ' + order.subject unless order.subject.blank?}", {:controller => 'orders', :action => 'show', :id => order.id } %> -
+          <%= order.amount_to_s %>
+        </p>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
+</div>

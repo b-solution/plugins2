@@ -1,0 +1,42 @@
+people_notification_001:
+  description: 'some notification'
+  start_date: '2016-01-01'
+  end_date: '2100-01-01'
+  frequency: 'everyday'
+  kind: notice
+  active: true
+people_notification_002:
+  description: 'some notification #2'
+  start_date: '2016-01-01'
+  end_date: '2100-01-01'
+  frequency: 'once'
+  kind: notice
+  active: true
+people_notification_003:
+  description: 'some notification #3'
+  start_date: '2016-01-01'
+  end_date: '2100-01-01'
+  frequency: 'wday'
+  kind: notice
+  active: true
+people_notification_004:
+  description: 'some notification #4'
+  start_date: '2016-01-01'
+  end_date: '2100-01-01'
+  frequency: 'mday'
+  kind: notice
+  active: true
+people_notification_005:
+  description: 'some notification #5'
+  start_date: '2016-01-01'
+  end_date: '2016-01-21'
+  frequency: 'mday'
+  kind: notice
+  active: true
+people_notification_006:
+  description: 'some notification #6'
+  start_date: '2016-01-01'
+  end_date: '2016-01-21'
+  frequency: 'mday'
+  kind: notice
+  active: false

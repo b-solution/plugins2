@@ -1,0 +1,41 @@
+<% if User.current.allowed_to?(:view_helpdesk_tickets, @project) && @issue.journal_messages && journal_message = @issue.journal_messages.detect{|j| j.journal == journal} %>
+  <p class="journal_message">
+    <span class="icon <%= journal_message.is_incoming? ? 'icon-email' : 'icon-email-to' %>">
+      <%= journal_message.is_incoming? ? l(:label_received_from) : l(:label_sent_to) %>
+    </span>
+      <span class="contact" style="white-space: nowrap;display: inline-block;">
+      <% if journal_message.is_incoming? %>
+        <%= "#{contact_tag(journal_message.contact)} (#{journal_message.from_address})".html_safe %>
+      <% else %>
+        <%= journal_message.contact.emails.include?(journal_message.to_address) ? "#{contact_tag(journal_message.contact)} (#{journal_message.to_address})".html_safe : journal_message.to_address %>
+      <% end %>
+      </span>
+
+    <% if attachment = journal_message.message_file %>
+      <span class="attachment" style="white-space: nowrap;display: inline-block;">
+        <%= link_to_attachment attachment, :text => l(:label_helpdesk_original), :class => 'icon icon-attachment' -%>
+        <%= h(" - #{attachment.description}") unless attachment.description.blank? %>
+          <span class="size">(<%= number_to_human_size attachment.filesize %>)</span>
+          <%= link_to_if_authorized image_tag('magnifier.png', :plugin => "redmine_contacts_helpdesk"),
+                :controller => 'helpdesk', :action => 'show_original',
+                :id => attachment, :project_id => @project %>
+      </span>
+    <% end %>
+    <span class="helpdesk-message-date"><%= format_time(journal_message.message_date) %></span>
+
+    <% unless journal_message.bcc_address.blank? && journal_message.cc_address.blank? %>
+    <br>
+    <span class="heldesk_cc helpdesk-message-date">
+      <%= "#{l(:label_helpdesk_cc)}: #{journal_message.cc_address}" unless journal_message.cc_address.blank? %><%= ", #{l(:label_helpdesk_bcc)}: #{journal_message.bcc_address}" unless journal_message.bcc_address.blank? %>
+    </span>
+    <% end %>
+
+    <% if false && journal_message.is_incoming?  %>
+    <span class="actions" style="float: right;">
+        <%= link_to "Split", "", :class => "icon icon-split" %>
+    </span>
+    <% end %>
+
+  </p>
+<% end %>
+

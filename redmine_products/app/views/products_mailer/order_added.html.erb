@@ -1,0 +1,22 @@
+<%= l(:text_products_order_added, :number => "##{@order.number}", :author => h(@order.author)) %>
+<hr />
+
+<h1><%= link_to("#{l(:label_order)} ##{@order.number}: #{@order.status if @order.status} - #{@order.amount_to_s}", order_url(@order)) %></h1>
+
+<ul>
+  <li><%= l(:label_products_order_date) %>: <%= format_time(@order.order_date) %></li>
+  <li><%= l(:label_products_number) %>: <%= @order.number %></li>
+  <li><%= l(:label_products_amount) %>: <%= @order.amount_to_s %></li>
+  <li><%= l(:label_products_order_subject) %>: <%= @order.subject %></li>
+  <li><%= l(:label_contact) %>: <%= @order.contact.name if @order.contact %></li>
+</ul>
+
+<%= textilizable(@order, :description, :only_path => false) %>
+
+<hr />
+
+<ol>
+  <% @order.lines.each do |line| %>
+  <li><%= product_line_to_s(line) %></li>
+  <% end %>
+</ol>

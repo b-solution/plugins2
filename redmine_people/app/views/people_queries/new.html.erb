@@ -1,0 +1,8 @@
+<h2><%= l(:label_query_new) %></h2>
+
+<%= form_tag(people_queries_path) do %>
+  <%= render :partial => 'people_queries/form', :locals => {:query => @query} %>
+  <%= submit_tag l(:button_save) %>
+<% end %>
+
+

@@ -1,0 +1,41 @@
+<h2><%= l(:label_mailchimp_manage_lists) %></h2>
+<%= form_tag bulk_update_mailchimp_memberships_path do %>
+  <div class='box'>
+    <% @contacts.each do |contact| %>
+      <%= hidden_field_tag 'contact_ids[]', contact.id %>
+      <p>
+        <%= contact_tag(contact, :type => "avatar", :size => 16) %>
+        <%= contact_tag(contact, :type => "plain") %>
+        <%= h contact.job_title %>
+        <% if !contact.is_company %>
+        <%= " #{l(:label_crm_at_company)} " unless (contact.job_title.blank? or contact.company.blank?) %>
+          <% if contact.contact_company %>
+            <%= link_to contact.contact_company.name, {:controller => 'contacts', :action => 'show', :project_id => contact.contact_company.project(@project), :id => contact.contact_company.id } %>
+          <% else %>
+            <%= h contact.company %>
+          <% end %>
+        <% end %>
+
+        <% if contact.tags.any? %>
+          (<%= l(:label_mailchimp_tags) %>
+          <% contact.tags.each do |tag| %>
+            <%= tag.name %>
+          <% end %>
+          )
+        <% end %>
+        - <%= mail_to contact.primary_email, contact.primary_email, :class => "icon icon-email"%>
+      </p>
+    <% end %>
+  </div>
+  <div class='box tabular'>
+      <p>
+        <label><%= l(:label_mailchimp_add_to_list) %></label>
+        <%= select_tag :list_to_add_id, options_for_select([[l(:label_mailchimp_not_selected), '']] + MailchimpList.all.map{ |x| [x.name, x.id] }) %>
+      </p>
+      <p>
+        <label><%= l(:label_mailchimp_remove_from_list) %></label>
+        <%= select_tag :list_to_remove_id, options_for_select([[l(:label_mailchimp_not_selected), '']] + MailchimpList.all.map{ |x| [x.name, x.id] }) %>
+      </p>
+  </div>
+  <%= submit_tag l(:button_apply) %>
+<% end %>

@@ -1,0 +1,30 @@
+product_category_001:
+  id: 1
+  code: 001
+  name: Root category 1
+  lft: 1
+  rgt: 10
+product_category_002:
+  id: 2
+  code: 002
+  name: Root category 2
+  lft: 1
+  rgt: 10
+product_category_003:
+  id: 3
+  name: Child category 1
+  parent_id: 1
+  lft: 1
+  rgt: 2
+product_category_004:
+  id: 4
+  name: Child category 2
+  parent_id: 1
+  lft: 1
+  rgt: 2
+product_category_005:
+  id: 5
+  name: Sub-child category 1
+  parent_id: 3
+  lft: 1
+  rgt: 2

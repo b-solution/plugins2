@@ -1,0 +1,59 @@
+Return-Path: <scrat.29@yandex.ru>
+Received: from mxback3h.mail.yandex.net ([127.0.0.1]) by mxback3h.mail.yandex.net with LMTP id 4M50bUaA for <admin@rusdsu.ru>; Tue, 16 Oct 2012 22:04:22 +0400
+Received: from web19h.yandex.ru (web19h.yandex.ru [84.201.186.48]) by mxback3h.mail.yandex.net (nwsmtp/Yandex) with ESMTP id 4MSWFxBe-4MSWR5Mr; Tue, 16 Oct 2012 22:04:22 +0400
+Received: from 127.0.0.1 (localhost.localdomain [127.0.0.1]) by web19h.yandex.ru (Yandex) with ESMTP id 4AA0919A8209; Tue, 16 Oct 2012 22:04:22 +0400
+Received: from 231.232.nat.atknet.ru (231.232.nat.atknet.ru [62.192.231.232]) by web19h.yandex.ru with HTTP; Tue, 16 Oct 2012 22:04:21 +0400
+Date: Tue, 16 Oct 2012 22:04:21 +0400
+From: Bobrov Arkadiy <scrat.29@yandex.ru>
+To: "admin@rusdsu.ru" <admin@rusdsu.ru>
+Message-ID: <82871350410661@web19h.yandex.ru>
+Mime-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="----==--bound.8288.web19h.yandex.ru";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Yandex-Front: mxback3h.mail.yandex.net
+X-Yandex-Front: web19h.yandex.ru
+X-Yandex-TimeMark: 1350410662
+X-Yandex-TimeMark: 1350410662
+Authentication-Results: mxback3h.mail.yandex.net; dkim=pass
+ header.i=@yandex.ru
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.ru; s=mail;
+ t=1350410662; bh=xMHVnHp+9VzOismIHXMGilFUQrefO/xoM9XGOIBtHuU=; h=From:To:Date;
+ b=RkMPnej1dIfy/XfhvBv3wWtfRDLVk/TGElPRwXQuL7nBca8RG/asGnvxKke+CSTm7
+ ZdMarFz/nsHoZ6hoYuL7BeJ3LLxb/Wxpq5C6RjDmekDjfQguy0xZz6/578xYCKQ3wf
+ 3kMVZ0Zc1vqXkpU4VtfDtW9BkjFHRF927UwEr+Cw=
+X-Yandex-Spam: 1
+X-Mailer: Yamail [ http://yandex.ru ] 5.0
+X-Yandex-Forward: 4a1d766bfd8c33858729d5998daf62e5
+
+
+
+------==--bound.8288.web19h.yandex.ru
+Date: Tue, 16 Oct 2012 22:31:09 +0400
+Mime-Version: 1.0
+Content-Type: text/xml;
+ charset=UTF-8;
+ name="=?UTF-8?B?0JrRg9Cx0L7QuiDQntGB0LXQvdC4IC0gMjAxMi54bWw=?="
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename="=?UTF-8?B?0JrRg9Cx0L7QuiDQntGB0LXQvdC4IC0gMjAxMi54bWw=?="
+Content-ID: <507da7ed9ba7d_3cb75082096978e0@redminecrm.mail>
+
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0id2luZG93cy0xMjUxIj8+
+DQo8RGFuY2VEYXRhIHZlcnNpb249IjIuMSI+PEdyb3VwRGF0YT48SGVhZGVy
+IGxhbmd1YWdlPSJSdXNzaWFuIj48VGl0bGUgc3RhdHVzPSLQ7vHx6Onx6u7l
+IPHu8OXi7e7i4O3o5SDq4PIuIEIiIGRhdGVDb21wPSIxNC4xMC4yMDEyIj7K
+8+Hu6iDO8eXt6CAtIDIwMTI8L1RpdGxlPjxDaXR5PsDw9eDt4+Xr/PHqPC9D
+aXR5PjxPcmdhbml6ZXI+0fLw5ezr5e3o5SwgwO3y7u3u4iDA6+Xq8eDt5PA8
+L09yZ2FuaXplcj48SW5pdGlhdG9yPtTS0SDA8PXg7ePl6/zx6u7pIO7h6+Dx
+8ug8L0luaXRpYXRvcj48Q291bnRyeT7Q7vHx6P88L0NvdW50cnk+PFJlZ2lv
+bklEPjI5PC9SZWdpb25JRD48UHJvZ3JhbSBkZXZlbG9wZXI9Isrw6OLu+eXq
+7uIgxOzo8vDo6Swg4y4gze7i7vHo4ejw8eoiIGVtYWlsPSJza2F0ZUBiYWxs
+cm9vbS5ydSIgdXNlcmVtYWlsPSJzY3JhdC4yOUB5YW5kZXgucnUiIHVzZXI9
+IsHu4fDu4iDA8Org5OjpLCDjLiDA8PXg7ePl6/zx6iIgdmVyc2lvbj0iNSAo
+MTAuMTAuMjAxMikiPlNrYXRpbmcgU3lzdGVtPC9Qcm9ncmFtPjxHcm91cCBw
+L0dyb3VwRGF0YT48L0RhbmNlRGF0YT4NCg==
+
+
+------==--bound.8288.web19h.yandex.ru--

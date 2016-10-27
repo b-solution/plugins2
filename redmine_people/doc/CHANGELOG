@@ -1,0 +1,87 @@
+== Redmine People plugin changelog
+
+Redmine People plugin - User management plugin for redmine
+Copyright (C) 2011-2015 Kirill Bezrukov
+http://www.redminecrm.com/
+
+== 2016-03-09 v1.2.0
+
+* Activity and files for deparments
+* Notifications and birthdays notifications
+* Managers and subordinates with edit permissions
+* Pagination fix for Redmine 3.2+
+* Fixed bug with self registration
+* Fixed light version 500 error
+
+== 2015-12-11 v1.1.1
+
+* Edit own data restriction setting
+* System users (not shown in list by default)
+* Async tabs load on person page
+* Hide age setting
+* Editable ACL settings
+
+== 2015-11-06 v1.1.0
+
+* People queries
+* Tags for people
+* Fixed bug with user custom fields override
+* Facebook avatars excluded
+
+== 2015-09-23 v1.0.0
+
+* Redmine 3.1 support
+* Lock/Unlock link instead delete
+* Spanish translation update (Leandro Russo)
+* Czech translation (Zdenek Mikovec)
+* Twitter avatars exlcuded
+* Portuguese translation update (Rui Rebelo)
+* Swedish translation update (Khedron Wilk)
+* Spanish Translation update (Luis Blasco)
+* Chinese Translation (zhoutt)
+
+== 2014-03-26 v0.1.8
+
+* Fixed bug with CRM plugin relation
+
+== 2014-03-25 v0.1.7
+
+* Permission for view people
+* Ruby 2.0.0 support (vpim gem changed to vcard)
+* Dutch translation
+* Tukish translation (Giray Pultar)
+* Serbian translation (Miodrag Milić)
+* German translation (Bastian Lüttig)
+* Japanese tranlation (Stephane Lapie)
+* Slovak tranlation (Martin Bucko)
+* Spanish tranlation (Martin Roberto Tolava)
+* Fixed bug for group permissions
+
+== 2013-01-31 v0.1.5
+
+* Fixed bug with departments
+
+== 2013-01-22 v0.1.4
+
+* Edit button for showing departments list from people list
+* Fixed bug with custom fields in Redmine 2.2
+* Fixed bug with edit departments check permissions
+* Fixed bug with avatar image
+* Departments
+* Polish locale (thanks to Rencz Jarek)
+* Bug: Cannot add Group in ACL control
+* Bug: After editing a person i people custom field values in user profile get removed
+* Facebook and Twitter profile pictures to avatar
+* Replacement of default "user" page
+* Permissions for anonymous and registered users
+* Bug: Internal error on opening people settings
+* Bug: Permissions for group now works
+
+== 2012-11-06 v0.0.1
+
+* Local avatars for users
+* Global users list with flexible ACL
+* Attachments for users
+* Person VCF export
+* Next birthdays list
+* New people list

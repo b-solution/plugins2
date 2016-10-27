@@ -1,0 +1,68 @@
+<%= form_tag({}) do -%>
+	<%= hidden_field_tag 'back_url', url_for(params) %>
+	<%= hidden_field_tag 'project_id', @project.id if @project %>
+		<table class="contacts orders index">
+		  <% previous_group = false %>
+		  <tbody>
+		  <% @orders.each do |order| -%>
+		  <% if @query.grouped? && (group = @query.group_by_column.value(order)) != previous_group %>
+		    <% reset_cycle %>
+		    <tr class="group open">
+		      <td colspan="5">
+		        <span class="expander" onclick="toggleRowGroup(this);">&nbsp;</span>
+		        <%= group.blank? ? l(:label_none) : column_content(@query.group_by_column, order) %> <span class="count"><%= @order_count_by_group[group] %></span>
+		        <%= link_to_function("#{l(:button_collapse_all)}/#{l(:button_expand_all)}",
+		                             "toggleAllRowGroups(this)", :class => 'toggle-all') %>
+		      </td>
+		    </tr>
+		    <% previous_group = group %>
+		  <% end %>
+			<tr class="hascontextmenu">
+				<td class="checkbox">
+					<%= check_box_tag("ids[]", order.id, false, :id => nil)  %>
+				</td>
+				<td class="status">
+				  <%= order_status_tag(order.status) %>
+				</td>
+				<% if order.contact %>
+				<td class="avatar">
+					<%= contact_tag(order.contact, :type => :avatar, :size => 32) %>
+				</td>
+				<% end %>
+				<td class="name order-name" <%= 'colspan=2' unless order.contact %>>
+						<h1 class="order_number"><%= link_to  "##{order.number}#{' - ' + order.subject unless order.subject.blank?}", order_path(order) %></h1>
+						<p>
+							<% if order.contact.blank? %>
+								<%= l(:label_products_order_internal) %>
+							<% else %>
+								<%= contact_tag(order.contact, :type => :plain) %>
+							<% end %>
+							<% if order.is_closed? %>
+								 - <%= l(:label_products_order_status_closed) %>: <%= format_date(order.closed_date) %>
+							<% end %>
+						</p>
+				</td>
+
+				<td class="info order-info">
+					<div class="order-sum"><strong><%= order.amount_to_s  %></strong>
+
+					</div>
+					<div class="order-date" >
+						<%= format_date(order.order_date) %>
+					</div>
+				</td>
+			</tr>
+	    <% end %>
+			<tr class="total">
+				<th/>
+				<th/>
+				<th/>
+		        <th class="title"> <%= "#{l(:label_total)} (#{@orders_count}):" %> </th>
+		        <th class="sum orders-sum" colspan="2"><%= prices_collection_by_currency(@ordered_amount).join('<br/>').html_safe %></th>
+			</tr>
+		</tbody>
+	  </table>
+
+<% end %>
+
+

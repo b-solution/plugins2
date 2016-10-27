@@ -1,0 +1,6 @@
+<% if issue && issue.deal && issue.deal.visible? %>
+<tr>
+	<th class="deal"><%= l(:label_deal) %></th>
+  <td class="deal" colspan="3"><%= deal_tag(issue.deal).html_safe %></td>
+</tr>
+<% end %>

@@ -1,0 +1,123 @@
+/**********************************************************************/
+/* ICONS
+/**********************************************************************/
+#admin-menu a.products { background-image: url(../images/cart.png); }
+
+.icon-product { background-image: url(../images/package.png); }
+.icon-product-green { background-image: url(../images/package_green.png); }
+.icon-order { background-image: url(../images/cart.png); }
+.icon-order-add { background-image: url(../images/cart_add.png); }
+.icon-sortable { background-image: url(../images/sortable.png); }
+
+/**********************************************************************/
+/* PRODUCTS COMMON
+/**********************************************************************/
+span.product {display: inline-block;}
+
+/**********************************************************************/
+/* PRODUCT LINES
+/**********************************************************************/
+div.details table.product-lines {border: 0px;}
+div.details table.product-lines {border-bottom: 1px;}
+div.details table.product-lines thead th,
+div.details table.product-lines th {border: 0px;background: transparent;}
+div.details table.product-lines th.price,
+div.details table.product-lines th.total {text-align: right;}
+div.details table.product-lines tbody tr:hover { background-color:inherit;}
+div.details table.product-lines tbody tr.line-data:hover { background-color:#ffffdd; }
+div.details table.product-lines tr.line-data {white-space: nowrap;}
+div.details table.product-lines td {padding-left: 4px; border: solid 1px #D7D7D7;}
+div.details table.product-lines td.item {text-align: left;width: 70%;white-space: normal;}
+div.details table.product-lines td.item img.gravatar {height: 32px; width: 32px;}
+div.details table.product-lines td.item span.product {display: inline;}
+div.details table.product-lines td.quantity {text-align: center;}
+div.details table.product-lines td.units {text-align: center;}
+div.details table.product-lines td.price {text-align: right;}
+div.details table.product-lines td.tax {text-align: center;}
+div.details table.product-lines td.tax_amount {text-align: right;}
+div.details table.product-lines td.total_price {text-align: right;}
+div.details table.product-lines tr.total th { text-align: right; padding-top: 1px; padding-bottom: 1px;}
+div.details table.product-lines tr.total.delimiter th {padding-top: 5px;}
+
+/**********************************************************************/
+/* ORDERS EXCERPT LIST
+/**********************************************************************/
+table.orders.index { margin-bottom: 0px;}
+table.orders.index.total { border-top: 0px;}
+table.orders.index td.name h1.order_number {font-size: 16px;}
+table.orders.index td.status { padding: 13px 5px 0px 10px; text-align: center;}
+table.orders.index td.name.order-name { width: 80%;}
+table.orders.index td.info.order-info {white-space: nowrap; text-align: right;padding-right: 10px;}
+table.orders.index th.sum.orders-sum, .order_list th.sum.orders-sum { text-align: right; white-space: nowrap; width: 10%;}
+table.orders.index .order-date {margin-top: 3px;}
+
+/**********************************************************************/
+/* ORDERS LIST
+/**********************************************************************/
+table.list td.products{text-align: left; white-space: normal;}
+table.list td.order_amount{text-align: right;white-space: nowrap;}
+table.list tr.order a {color: #666;}
+
+/**********************************************************************/
+/* PRODUCTS EXCERPT LIST
+/**********************************************************************/
+table.products.index td.name h1.product-code {font-size: 16px;}
+table.products.index td.name.product-name { width: 80%;}
+table.products.index td.info.product-info {white-space: nowrap; text-align: right;padding-right: 10px;}
+
+/**********************************************************************/
+/* PRODUCTS DETAILS
+/**********************************************************************/
+.product.details .subject_header .gravatar {height: 128px; width: 128px;}
+.product.details {background: #f9ffd6;}
+
+/**********************************************************************/
+/* PRODUCTS DATA
+/**********************************************************************/
+.products-data div.product {overflow: hidden; margin-bottom: 15px;}
+.products-data div.product div.image {float: left;}
+.products-data div.product div.data {margin-left: 45px;}
+.products-data div.product div.data h4.name {border-bottom: 0px; padding: 0px; margin-bottom: 5px;}
+.products-data div.product div.data p.info {margin: 0px;}
+
+/**********************************************************************/
+/* PRODUCT LINES FORM
+/**********************************************************************/
+
+table.product-lines.form {border-collapse: collapse; width: 100%;}
+table.product-lines.form tr:hover td {border-top: 0px;border-left: 0px;border-right: 0px;}
+table.product-lines.form td {border: 0px; padding: 5px; height: 40px;}
+table.product-lines.form td {border-bottom: 1px solid #e4e4e4;}
+table.product-lines.form td.product-image {vertical-align: top; width: 1px;}
+table.product-lines.form td.position {width: 20px;}
+table.product-lines.form tr.line.fields td.quantity input {text-align: center;}
+table.product-lines.form tr.line.fields td.price input {text-align: right;}
+table.product-lines.form tr.line.fields td.tax input {text-align: right;}
+table.product-lines.form tr.line.fields td {text-align: center;}
+table.product-lines.form tr.line.fields td.item {text-align: left; width: 70%; padding-right: 10px;}
+table.product-lines.form tr.line.fields td.item textarea {width: 100%;}
+table.product-lines.form tr.line.fields td.total {text-align: right;font-weight: bold;}
+table.product-lines.form td#total_amount {
+  text-align: right;
+  border-top-style: solid;
+  border-top-color: #D7D7D7;
+  border-top-width: 1px;
+  font-weight: bold;
+}
+table.product-lines.form tr.line-total td.add-link {text-align: left;}
+table.product-lines.form tr.line-total td.total-data {border-top: 1px solid #D7D7D7;text-align: right;}
+
+/**********************************************************************/
+/* ORDER STAT
+/**********************************************************************/
+
+table.orders-stat th {text-align: left; vertical-align: top; padding-bottom: 10px;font-weight: normal;}
+table.orders-stat td.sum {text-align: right; padding-bottom: 10px;white-space: nowrap;font-weight: bold;}
+table.orders-stat {padding-right: 10px; width: 100%;}
+table.orders-stat .currency { padding-left: 15px; padding-right: 15px;}
+table.orders-stat.statuses th {padding-top: 7px;}
+
+/**********************************************************************/
+/* OTHER
+/**********************************************************************/
+em.info a {color: #888;}

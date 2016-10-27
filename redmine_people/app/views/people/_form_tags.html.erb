@@ -1,0 +1,23 @@
+<div id="tags_data">
+<%= people_tag_links(@person.tag_list) %>
+<% if User.current.allowed_people_to?(:manage_tags, @person) %>
+  <span class="contextual">
+    <%= link_to l(:label_people_edit_tags), {}, :onclick => "$('#edit_tags_form').show(); $('#tags_data').hide();  return false;", :id => 'edit_tags_link' %>
+  </span>
+<% end %>
+</div>
+
+<div id="edit_tags_form" style="display:none;">
+  <%= form_tag( {:controller => 'people',
+                :action => 'update',
+                :id => @person },
+                :method => :put,
+                :multipart => true ) do %>
+
+
+    <%= render :partial => "people_tags/tags_form" %>
+
+    <%= submit_tag l(:button_save), :class => "button-small" %>
+    <%= link_to l(:button_cancel), {}, :onclick => "$('#edit_tags_form').hide(); $('#tags_data').show(); return false;" %>
+  <% end %>
+</div>

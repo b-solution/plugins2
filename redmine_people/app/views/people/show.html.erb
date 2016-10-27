@@ -1,0 +1,64 @@
+<%= error_messages_for 'person' %>
+
+<% html_title "#{l(:label_people_person)} ##{@person.id}: #{@person.name}" %>
+
+<div class="contextual">
+  <%= link_to l(:label_profile), user_path(@person), :class => 'icon icon-user' %>
+  <%= link_to l(:button_edit), {:controller => 'people', :action => 'edit', :id => @person}, :class => 'icon icon-edit' if User.current.allowed_people_to?(:edit_people, @person) %>
+  <%= change_status_link(@person) %>
+</div>
+
+<h2><%= l(:label_people_person) %> #<%= @person.id %></h2>
+<div class="person details">
+  <%= content_tag('span', l(:label_people_is_system), :class => 'system')  if  @person.is_system %>
+  <table class="subject_header">
+    <tr>
+      <td class="avatar"><%= link_to avatar(@person, :size => "64", :full_size => true), @person.avatar %></td>
+      <td class="name" style="vertical-align: top;">
+        <h1><%= h @person.name %></h1>
+        <p>
+          <%= h @person.job_title %>
+          <% if @person.department %>
+            <%= " #{l(:label_people_at_department)} " %>
+            <%= department_tree_tag @person %>
+          <% end %>
+        </p>
+        <%= render :partial => 'form_tags', :object => @person.tags, :locals => {:editable => true} %>
+      </td>
+      <td class="subject_info">
+        <ul>
+          <% if @person.phones.any? %>
+            <li class="phone icon icon-phone"><%=  @person.phones.first %></li>
+          <% end %>
+          <li class="email icon icon-email"><%= mail_to @person.email %></li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <%= call_hook(:view_people_show_details_bottom, :person => @person) %>
+</div>
+<% tabs = [{:name => 'activity', :partial => 'activity', :label => l(:label_activity)},
+     {:name => 'files', :partial => 'attachments', :label => l(:label_attachment_plural)},
+     {:name => 'projects', :partial => 'projects', :label => l(:label_project_plural)},
+     ]
+  tabs << {:name => 'subordinates', :partial => 'subordinates', :label => l(:label_people_subordinates)} if @person.subordinates.any?
+%>
+<%= render_people_tabs tabs%>
+
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'attributes' %>
+  <%= call_hook(:view_people_sidebar_after_attributes, :person => @person) %>
+  <% if !@person.background.blank? %>
+    <h3><%= l(:label_people_background) %></h3>
+    <div class="wiki"><%= textilizable(@person, :background) %></div>
+  <% end %>
+<% end %>
+
+
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag :redmine_people, :plugin => 'redmine_people'  %>
+  <%= stylesheet_link_tag :redmine_people, :plugin => 'redmine_people' %>
+<% end %>

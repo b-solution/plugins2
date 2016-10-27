@@ -1,0 +1,174 @@
+# English strings go here for Rails i18n
+tr:
+  label_helpdesk: Yardım Masası
+  label_helpdesk_auto_answer_template: Otomatik yanıt eposta taslağı
+  text_helpdesk_answer_macros: Kullanılabilir makrolar %{macro}
+  label_is_send_mail: Not gönder
+  label_send_auto_answer: Otomatik yanıt gönder
+  label_received_from: Received from
+  label_sent_to: Sent to
+  project_module_contacts_helpdesk: Yardım Masası
+  permission_send_response: Kişilere yanıt gönderme
+  permission_edit_helpdesk_settings: Hepldesk ayarlarını düzenleme
+  label_not_create_contacts: Yeni kişi kabul etme
+  field_created_contact_tags: oluşturulan kayda eklenecek etiketler
+  label_helpdesk_save_as_attachment: Orjinal epostayı ek olarak kaydet
+
+#1.0.2
+  label_helpdesk_assign_author: Epostayı göndereni işi raporlayan yap
+
+#1.0.3
+  label_helpdesk_answered_status: Yanıtlanan kaydın durumu
+  label_helpdesk_reopen_status: Yeniden açılan kaydın durumu
+  label_helpdesk_tracker: Kayıt iş türü
+  label_helpdesk_assigned_to: Kaydı ata
+  label_helpdesk_lifetime: Kayıt ömrü
+  label_helpdesk_server_settings: Eposta sunucusu ayarları
+  label_helpdesk_protocol: Protokol
+  label_helpdesk_host: Sunucu
+  label_helpdesk_port: Port
+  label_helpdesk_username: giriş adı
+  label_helpdesk_password: Şifre
+  label_helpdesk_ssl: SSL
+  label_helpdesk_imap_folder: IMAP klasörü
+  label_helpdesk_move_on_success: Başarılı olanları taşı
+  label_helpdesk_move_on_failure: Başarısız olanları taşı
+  label_helpdesk_apop: APOP
+  label_helpdesk_delete_unprocessed: işlenemeyen mesajları sil
+  label_helpdesk_first_answer_template: Taslak
+  label_helpdesk_test_connection: Bağlantı test et
+  label_helpdesk_get_mail: Eposta al
+  label_helpdesk_get_mail_success: "%{count} eposta işlendi"
+  label_helpdesk_css: Eposta stili (CSS)
+  label_helpdesk_original: Orjinal
+
+#1.0.4
+  label_helpdesk_blacklist: Engellenen eposta adresleri
+  label_helpdesk_previous_issues: Müşterinin önceki kayıtları
+  permission_view_helpdesk_tickets: Yardım Masası kayıtlarını görme
+  label_helpdesk_last_message: Son mesaj
+  label_helpdesk_enable_modules: Contacts ve İş takibi modülleri aktif olmalı bu proje için
+  label_helpdesk_customer_profile: Müşteri profili
+  label_helpdesk_show_contact_card: Müşteri profilini göster
+
+#2.0.0
+  label_helpdesk_send_note_by_default: varsayılan olarak notu yolla
+  label_helpdesk_ticket_attributes: Kayıt nitelikleri
+  label_helpdesk_to_address: Kime adresi
+  label_helpdesk_from_address: Kimden adresi
+  label_helpdesk_ticket_date: Kayıt adresi
+  label_helpdesk_customer: Müşteri
+  label_helpdesk_from: Kimden
+  label_helpdesk_cc: Bilgi
+  label_helpdesk_bcc: Gizli
+  label_helpdesk_ticket_plural: Yardım Masası kayıtları
+  label_helpdesk_template: Yardım Masası şablonu
+  label_helpdesk_general: Genel
+  permission_edit_helpdesk_tickets: Kayıt bilgilerini düzenle
+
+#2.1.0
+  label_helpdesk_ticket: Yardım Masası kaydı
+  label_helpdesk_spam: İstenmeyen eposta
+  label_helpdesk_add_cc: Cc/Bcc leri ekle
+  label_helpdesk_add_contact_notes: İlk epostayı kişilere kaydet
+  text_helpdesk_customer_count: "%{count} müşteri"
+  text_helpdesk_ticket_count: "%{count} kayıt"
+  label_helpdesk_tickets_report: Yardım Masası kayıtlar raporu
+  label_helpdesk_staff_report: Yardım Masası sorumlu raporu
+  label_helpdesk_tickets_email: Eposta
+  label_helpdesk_tickets_phone: Telefon
+  label_helpdesk_tickets_web: Web
+  label_helpdesk_tickets_twitter: Twitter
+  label_helpdesk_ticket_source: Kayıt kaynağı
+  label_helpdesk_ticket_time: Kayıt zamanı
+  label_helpdesk_save_cc: CC dekileri kişilere kaydet
+  permission_view_helpdesk_reports: Raporları görme
+
+#2.1.2
+  label_helpdesk_answer_template: Yanıt şablonu
+
+#2.1.3
+  label_helpdesk_previous_tickets: Önceki kayıtlar
+  label_helpdesk_public_tickets: Umumi sayfaları aç
+  label_helpdesk_public_title: Umumi sayfa başlığı
+  label_helpdesk_settings_public: Umumi Sayfa
+  label_helpdesk_public_comments: Not eklemeye izin ver
+  label_helpdesk_public_show_spent_time: Harcanan zamanı göster
+  label_helpdesk_public_link: Umumi sayfa bağlantısı
+
+#2.1.4
+  label_helpdesk_ticket_new: Yeni kayıt
+  label_helpdesk_report_plural: Yardım Masası raporları
+
+#2.2.0
+  label_helpdesk_customer_company: Müşteri şirketi
+  label_helpdesk_canned_response_plural: Sık kullanılan yanıtlar
+  label_helpdesk_new_canned_response: Yeni sık kullanılan yanıt
+  label_helpdesk_canned_response: Sık kullanılan yanıt
+  permission_manage_public_canned_responses: Genel sık kullanılan yanıtları yönet
+  permission_manage_canned_responses: Sık kullanılan yanıtları yönet
+
+#2.2.1
+  my_helpdesk_tickets: Benim Yardım Masası kayıtlarım
+  label_helpdesk_view_all_tickets: Tüm kayıtları göster
+
+#2.2.3
+  label_helpdesk_tickets_conversation: Görüşme
+
+#2.2.4
+  label_helpdesk_required_custom_fields_error: Contacts should not have the required custom fields
+
+#2.2.6
+  label_helpdesk_last_message_date: Kayıt güncellendi
+  label_helpdesk_ago: "%{value} önce"
+
+#2.2.8
+  label_helpdesk_to: Kime
+  label_helpdesk_send_as: Gönderme biçimi
+  label_helpdesk_not_send: "(gönderme)"
+  label_helpdesk_send_as_notification: Bilgilendirme olarak gönder
+  label_helpdesk_send_as_message: Başlangıç mesajı olarak gönder
+
+#2.2.9
+  label_helpdesk_incoming_mail_server: Gelen posta sunucusu
+  label_helpdesk_outgoing_mail_server: Giden posta sunucusu
+  label_helpdesk_smtp_use_default_settings: Varsayılanı kullan
+  label_helpdesk_smtp_server: SMTP sunucu
+  label_helpdesk_smtp_tls: TLS
+  label_helpdesk_authentication: Kimlik denetim metodu
+  label_helpdesk_authentication_plain: Plain
+  label_helpdesk_authentication_login: Login
+  label_helpdesk_authentication_cram_md5: MD5 Challenge-Response
+  label_helpdesk_smtp_domain: Domain
+
+ #2.2.10
+  label_helpdesk_email_sending_problems: Eposta gönderme problemleri
+
+ #2.3.0
+  label_helpdesk_ticket_reaction_time: Tepki süresi
+  label_helpdesk_ticket_first_response_time: İlk yanıt süresi
+  label_helpdesk_ticket_resolve_time: Çözülme süresi
+  label_helpdesk_ticket_last_response_time: Cevap bekleme
+  field_helpdesk_ticket: Yardım masası bilet
+  text_helpdesk_to_address_cant_be_blank: Kime adresi boş olamaz
+  text_helpdesk_message_body_cant_be_blank: Mesaj içeriği boş olamaz
+  text_helpdesk_from_address_cant_be_blank: Kimden adresi boş olamaz
+
+ #2.4.0
+  label_helpdesk_vote: Oylama
+  label_helpdesk_vote_settings: Oylamaya izin ver
+  label_helpdesk_vote_comment_settings: Yorum yapılmasına izin ver
+  label_helpdesk_mark: Lütfen bu işi derecelendirin!
+  label_helpdesk_mark_awesome: Müthiş
+  label_helpdesk_mark_justok: İyi
+  label_helpdesk_mark_notgood: İyi değil
+  label_helpdesk_vote_comment_placeholder: yorum bırakma
+  label_helpdesk_submit: Gönder
+  label_helpdesk_vote_thank: Oylama için teşekkürler!
+  label_helpdesk_close_page: Sayfayı kapat
+  label_helpdesk_customer_vote: Müşteri oylaması
+  label_helpdesk_vote: Oylama
+  label_helpdesk_vote_comment: Oy yorumu
+
+  field_vote: Oylama
+  field_vote_comment: Oy yorumu

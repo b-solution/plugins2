@@ -1,0 +1,70 @@
+# German strings go here for Rails i18n
+de:
+  label_product: Produkt
+  label_product_plural: Produkte
+  label_products_code: Artikelnummer
+  label_products_price: Preis
+  label_products_status: Status
+  label_products_description: Beschreibung
+  label_products_name: Bezeichnung
+  label_products_status_active: Aktiv
+  label_products_status_inactive: Inaktiv
+  label_products_new: Neues Produkt
+  label_products_edit: Produkt bearbeiten
+  label_products_line_tax: Steuer
+  label_products_line_discount: Rabatt
+  label_order: Bestellung
+  label_order_plural: Bestellungen
+  label_products_quantity: Menge
+  label_products_total: Gesamt
+  label_products_order_date: Bestelldatum
+  label_products_closed_date: Geschlossen am
+  label_products_order_lines: Positionen
+  label_products_order_placed: Neue Bestellung aufgegeben
+  label_products_product_created: Neues Produkt angelegt
+  label_products_number: Nummer
+  label_products_currency: Währung
+  label_products_amount: Menge
+  label_products_order_new: Neue Bestellung
+  label_products_order_edit: Bestellung bearbeiten
+  label_products_order_status_plural: Bestellstatus
+  label_products_order_status_new: Neuer Bestellstatus
+  label_products_order_subject: Betreff
+  label_products_order_unit_price: Einzelpreis
+  label_products_show_in_lines: Show in lines
+  label_products_show_in_top_menu: In Hauptmenü anzeigen
+  label_products_show_in_app_menu: In App-Menü anzeigen
+  label_products_default_currency: Standardwährung
+  label_products_cross_project_contacts: Projektübergreifende Kontakte
+  label_products_select_companies: Firmen auswählen
+  label_products_order_last_number: 'Die letzte Bestellnummer war #%{number}'
+  label_products_order_internal: Interne Bestellung
+  label_products_order_status_closed: Geschlossen
+  label_products_ordered: Bestellt
+  label_products_image: Produktbild
+  label_products_recent: Kürzlich angezeigte Produkte
+  label_products_orders_recent: Neuste Bestellungen
+  error_products_unable_delete_order_status: Aktivieren um Bestellstatus zu löschen
+  label_products_add_line: Position hinzufügen
+  label_attribute_of_product: "Produktbezeichnung %{name}"
+  label_attribute_of_lines: "Positionsbezeichnung %{name}"
+  text_products_order_added: "Bestellung %{number} wurde von %{author} angelegt."
+  text_products_order_updated: "Bestellung %{number} wurde von %{author} geändert."
+  text_products_order_status_changed: "Der Bestellstatus wurde von %{old} zu %{new} geändert"
+  text_products_order_amount_changed: "Bestellmenge wurde von %{old} zu %{new} geändert"
+  label_products_select: Produkt auswählen
+  label_products_item: Artikel
+  label_products_subtotal: Zwischensumme
+  label_products_tax_total: Summe Steuern
+  label_products_units_total: Total units
+  label_products_add: Produkt hinzufügen
+  label_products_order_added: Bestellung hinzugefügt
+  label_products_order_updated: Bestellung bearbeitet
+  label_products_order_comment_added: Kommentar an Bestellung angefügt
+  label_products_add_description: Beschreibung hinzufügen
+  label_products_search_for_products: Nach hinzufügbaren Produkten suchen
+  label_products_add_product_plural: Produkt hinzufügen
+  label_products_search_for_product: Produkt suchen
+  label_products_create_invoice: Rechnung erstellen
+
+  permission_manage_product_relations: Produktbeziehungen verwalten

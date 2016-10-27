@@ -1,0 +1,14 @@
+<h3 class="title"><%= Setting.app_title %> </h3>
+<% @notes.each do |note| %>
+  <%= render :partial => 'notification_card', :locals => { :note => note } %>
+<% end %>
+<% @birthdays.each do |label, collection| %>
+  <% next unless collection.any? %>
+  <div class='birthdays'>
+    <%= render :partial => 'birthdays', :locals => { :collection => collection, :label => label } %>
+  </div>
+<% end if @birthdays %>
+
+<p class="buttons" style="float: right;">
+  <%= submit_tag l(:label_people_close), :name => nil, :onclick => "hideModal(this);", :type => 'button' %>
+</p>

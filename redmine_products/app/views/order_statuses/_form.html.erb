@@ -1,0 +1,16 @@
+<%= error_messages_for 'order_status' %>
+
+<div class="box tabular">
+<p><%= f.text_field :name, :required => true %></p>
+<p><%= f.text_field :color_name, :label => :field_color, :class => "colorpicker" %><%= javascript_tag "$('#order_status_color_name').colorPicker();"%></p>
+<p><%= f.check_box :is_closed, :label => :label_products_order_status_closed %></p>
+<p><%= f.check_box :is_default %></p>
+
+</div>
+
+
+<% content_for :header_tags do %>
+	<%= javascript_include_tag :contacts, :plugin => 'redmine_contacts'  %>
+	<%= javascript_include_tag :"jquery.colorPicker.min.js", :plugin => 'redmine_contacts'  %>
+	<%= stylesheet_link_tag :"colorPicker.css", :plugin => 'redmine_contacts' %>
+<% end %>

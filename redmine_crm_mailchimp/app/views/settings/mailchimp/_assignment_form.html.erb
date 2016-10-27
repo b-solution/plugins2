@@ -1,0 +1,20 @@
+<% assignment ||= nil %>
+<% list_id = assignment.try(:[], :mailchimp_id) %>
+<% query_id = assignment.try(:[], :contact_query_id) %>
+<tr>
+  <td>
+    <% if @mailchimp_settings.has_queries? %>
+      <%= select_tag 'settings[mailchimp_query_assignments][][contact_query_id]', options_for_select( [[nil, nil]] + @mailchimp_settings.query_options, query_id ), :class => 'contact-query-id' %>
+    <% else %>
+      <span><%= l(:label_mailchimp_no_queries_available) %></span>
+    <% end %>
+  </td>
+  <td>
+    <%= select_tag 'settings[mailchimp_query_assignments][][mailchimp_id]', options_for_select( [[nil, nil]] + @mailchimp_settings.mailchimp_options, list_id ), :class => 'mailchimp-id' %>
+    <span class='no-lists' style='display: none'><%= l(:label_mailchimp_no_lists_available) %></span>
+  </td>
+  <td>
+    <%= link_to l(:label_mailchimp_delete), 'javascript:void(0)', :class => 'icon icon-del pull-right mailchimp-delete' %>
+    <%= link_to l(:label_mailchimp_sync), 'javascript:void(0)', :class => 'icon icon-sync pull-right mailchimp-sync' %>
+  </td>
+</tr>

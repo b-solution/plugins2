@@ -1,0 +1,16 @@
+<% if @issue.safe_attribute? 'products_issues_attributes' -%>
+  <p id="products_form"><label><%= l(:label_product_plural) %></label>
+  <span id="products_inputs">
+        <%= form.fields_for :products_issues do |builder| %>
+          <%= render :partial => 'products_issues/product_fields', :locals => {:f => builder, :products_issue => builder.object} %>
+        <% end %>
+  </span>
+
+  <span class="search_for_watchers">
+  <%= link_to l(:label_products_search_for_products),
+              {:controller => 'products_issues', :action => 'new', :issue_id => @issue, :project_id => @issue.project},
+              :remote => true,
+              :method => 'get' %>
+  </span>
+  </p>
+<% end %>

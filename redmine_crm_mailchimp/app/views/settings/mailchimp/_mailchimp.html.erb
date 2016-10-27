@@ -1,0 +1,7 @@
+<% mailchimp_tabs = [
+    { :name => 'api_key', :partial => 'settings/mailchimp/api_key', :label => :label_mailchimp_api_key },
+    { :name => 'sync',    :partial => 'settings/mailchimp/sync',    :label => :label_mailchimp_sync    }
+  ]
+%>
+
+<%= render_tabs mailchimp_tabs %>

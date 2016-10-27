@@ -1,0 +1,20 @@
+<% products = @contact.products.visible.order("#{Product.table_name}.name") %>
+<div id="products">
+
+<h3><%= l(:label_product_plural) %></h3>
+
+<% if products.any? %>
+  <% product_count = @contact.orders.includes(:products).group("#{Product.table_name}.id").count %>
+  <table class="related_products">
+  <% products.each do |product| %>
+    <tr class="product">
+      <td class="name" style="vertical-align: top;">
+        <p>
+          <%= product_tag(product) %><%= " x #{product_count[product.id]}" %>
+        </p>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
+</div>

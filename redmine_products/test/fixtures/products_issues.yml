@@ -1,0 +1,20 @@
+product_issue_001:
+  id: 1
+  product_id: 1
+  issue_id: 1
+product_issue_002:
+  id: 2
+  product_id: 1
+  issue_id: 2
+product_issue_003:
+  id: 3
+  product_id: 2
+  issue_id: 3
+product_issue_004:
+  id: 4
+  product_id: 1
+  issue_id: 3
+product_issue_005:
+  id: 5
+  product_id: 3
+  issue_id: 1

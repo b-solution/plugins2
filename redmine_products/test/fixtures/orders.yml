@@ -1,0 +1,90 @@
+orders_001: #total_excl: $6 642.20, subtotal: $6 571.00, tax_excl: $71.20, tax_incl: $59.33
+  id: 1
+  number: '24'
+  subject: Sales order for plugin Invoices
+  order_date: <%= Time.now.to_s(:db) %>
+  closed_date:
+  currency: USD
+  contact_id: 2
+  status_id: 3
+  assigned_to_id:
+  author_id: 9
+  project_id: 1
+  comments_count:
+  description: This is a order 0030 description
+  amount: 6642
+orders_002: #total: £9 740.00
+  id: 2
+  number: '33'
+  subject: Sales order for plugin Helpdesk
+  order_date: <%= 5.days.ago.to_s(:db) %>
+  closed_date:
+  currency: GBP
+  contact_id: 4
+  status_id: 1
+  assigned_to_id:
+  author_id: 8
+  project_id: 1
+  comments_count:
+  description: This is a order 0041 description
+  amount: 9740
+orders_003: #total: $5 600.00
+  id: 3
+  number: '34'
+  subject: Sales order for plugin People
+  order_date: <%= Time.now.to_s(:db) %>
+  closed_date:
+  currency: USD
+  contact_id: 2
+  status_id: 5
+  assigned_to_id:
+  author_id: 8
+  project_id: 1
+  comments_count:
+  description: This is a order 0042 description
+  amount: 5600
+orders_004:
+  id: 4
+  number: '27'
+  subject: Sales order for plugin Finance
+  order_date:  <%= Date.today.to_s(:db) %>
+  closed_date:
+  currency: RUB
+  contact_id: 2
+  status_id: 2
+  assigned_to_id:
+  author_id: 3
+  project_id: 5
+  comments_count:
+  description: This is a order 0033 description
+  amount: 4900
+orders_005:
+  id: 5
+  number: '20'
+  subject: Sales order for plugin Invoices
+  order_date: <%= Date.today.to_s(:db) %>
+  closed_date:
+  currency: USD
+  contact_id: 2
+  status_id: 3
+  assigned_to_id:
+  author_id: 8
+  project_id: 5
+  comments_count:
+  description: This is a order 0024 description
+  amount: 3373
+orders_006:
+  id: 6
+  number: '21'
+  subject: Sales order for plugin CRM
+  order_date: <%= Date.today.to_s(:db) %>
+  closed_date:
+  currency: RUB
+  contact_id: 1
+  status_id: 4
+  assigned_to_id:
+  author_id: 4
+  project_id: 5
+  comments_count:
+  description: This is a order 0025 description
+  amount: 17000

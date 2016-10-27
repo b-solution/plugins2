@@ -1,0 +1,53 @@
+<%= form_tag({}) do -%>
+<%= hidden_field_tag 'back_url', url_for(params), :id => nil %>
+<div class="autoscroll">
+<table class="list orders issues contacts">
+  <thead>
+    <tr>
+      <th class="checkbox hide-when-print">
+        <%= link_to image_tag('toggle_check.png'), {},
+                              :onclick => 'toggleIssuesSelection(this); return false;',
+                              :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}" %>
+      </th>
+      <% @query.inline_columns.each do |column| %>
+        <%= column_header(column) %>
+      <% end %>
+    </tr>
+  </thead>
+  <% previous_group = false %>
+  <tbody>
+  <% @orders.each do |order| -%>
+  <% if @query.grouped? && (group = @query.group_by_column.value(order)) != previous_group %>
+    <% reset_cycle %>
+    <tr class="group open">
+      <td colspan="<%= @query.inline_columns.size + 2 %>">
+        <span class="expander" onclick="toggleRowGroup(this);">&nbsp;</span>
+        <%= group.blank? ? l(:label_none) : column_content(@query.group_by_column, order) %> <span class="count"><%= @order_count_by_group[group] %></span>
+        <%= link_to_function("#{l(:button_collapse_all)}/#{l(:button_expand_all)}",
+                             "toggleAllRowGroups(this)", :class => 'toggle-all') %>
+      </td>
+    </tr>
+    <% previous_group = group %>
+  <% end %>
+  <tr id="order-<%= order.id %>" class="hascontextmenu <%= cycle('odd', 'even') %>">
+    <td class="checkbox hide-when-print"><%= check_box_tag("ids[]", order.id, false, :id => nil) %></td>
+    <%= raw @query.inline_columns.map {|column| "<td class=\"#{column.css_classes}\">#{column_content(column, order)}</td>"}.join %>
+  </tr>
+  <% @query.block_columns.each do |column|
+       if (text = column_content(column, order)) && text.present? -%>
+  <tr class="<%= current_cycle %>">
+    <td colspan="<%= @query.inline_columns.size + 1 %>" class="<%= column.css_classes %>"><%= text %></td>
+  </tr>
+  <% end -%>
+  <% end -%>
+  <% end -%>
+      <tr class="total">
+        <th colspan="<%= @query.inline_columns.size %>" class="title" style="text-align:right;"> <%= "#{l(:label_total)} (#{@orders_count}):" %> </th>
+        <th colspan="2" class="sum" style="text-align:right;">
+          <%= prices_collection_by_currency(@ordered_amount, :hide_zeros => true).join('<br/>').html_safe %>
+        </th>
+      </tr>
+  </tbody>
+</table>
+</div>
+<% end -%>

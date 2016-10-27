@@ -1,0 +1,11 @@
+<h2><%= l(:label_products_order_new) %></h2>
+
+<%= labelled_form_for @order, :html => { :multipart => true, :id => 'order_form'} do |f|  %>
+  <%= render :partial => 'form', :locals => {:f => f}  %>
+  <%= submit_tag l(:button_save) -%>
+<% end -%>
+
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag :products, :plugin => 'redmine_products' %>
+  <%= javascript_include_tag :products, :plugin => 'redmine_products'  %>
+<% end %>

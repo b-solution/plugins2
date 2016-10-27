@@ -1,0 +1,12 @@
+<div class="contextual">
+	<%= link_to_if_authorized l(:button_send_mail), {:controller => 'product_mails', :action => 'send', :id => @product}, :class => 'icon icon-email' unless @product.nil? %>
+	<%= link_to l(:button_delete), {:controller => 'products', :action => 'destroy', :id => @product}, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' if  !@product.nil? && @product.destroyable_by?(User.current) %>
+</div>
+
+<h2><%= l(:label_products_edit) %></h2>
+
+<%= labelled_form_for :product, @product, :url => {:action => 'update', :id => @product.id}, :html => { :multipart => true, :method => :put, :id => 'product_form'} do |f|  %>
+  <%= render :partial => 'form', :locals => {:f => f}  %>
+  <%= submit_tag l(:button_save) -%>
+<% end -%>
+

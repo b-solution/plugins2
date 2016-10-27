@@ -1,0 +1,14 @@
+<span class="product_fields">
+  <%= f.hidden_field(:product_id) %>
+  <%= product_tag(products_issue.product, :id => "product_#{products_issue.product.id}", :no_link => true) %>
+  <%= "(#{products_issue.product.price_to_s}) " unless products_issue.product.price.blank? %>
+  <% if  User.current.allowed_to?(:edit_issues, @project) %>
+    <%= f.hidden_field(:_destroy) %>
+    <%= link_to_function(image_tag('delete.png'),
+        "$(this).prev('input[type=hidden]').val('1');
+         $(this).parents('.product_fields').hide();",
+          :class  => "delete",
+          :title => l(:button_delete) ) %>
+
+  <% end %>
+</span>

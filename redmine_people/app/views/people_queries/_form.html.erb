@@ -1,0 +1,66 @@
+<%= error_messages_for 'query' %>
+
+<div class="box">
+  <div class="tabular">
+    <%= hidden_field_tag 'gantt', '1' if params[:gantt] %>
+
+    <p><label for="query_name"><%=l(:field_name)%></label>
+    <%= text_field 'query', 'name', :size => 80 %></p>
+
+    <% if User.current.admin? || User.current.allowed_people_to?(:manage_public_people_queries) %>
+      <p><label><%=l(:field_visible)%></label>
+        <label class="block"><%= radio_button 'query', 'visibility', PeopleQuery::VISIBILITY_PRIVATE %> <%= l(:label_visibility_private) %></label>
+        <label class="block"><%= radio_button 'query', 'visibility', PeopleQuery::VISIBILITY_PUBLIC %> <%= l(:label_visibility_public) %></label>
+      </p>
+    <% end %>
+
+
+    <fieldset><legend><%= l(:label_options) %></legend>
+    <p><label for="query_default_columns"><%=l(:label_default_columns)%></label>
+    <%= check_box_tag 'default_columns', 1, @query.has_default_columns?, :id => 'query_default_columns',
+          :onclick => 'if (this.checked) {$("#columns").hide();} else {$("#columns").show();}' %></p>
+
+    <p><label for="query_group_by"><%= l(:field_group_by) %></label>
+    <%= select 'query', 'group_by', @query.groupable_columns.collect {|c| [c.caption, c.name.to_s]}, :include_blank => true %></p>
+
+    </fieldset>
+  </div>
+
+  <fieldset id="filters"><legend><%= l(:label_filter_plural) %></legend>
+  <%= render :partial => 'queries/filters', :locals => {:query => query}%>
+  </fieldset>
+
+
+  <fieldset><legend><%= l(:label_sort) %></legend>
+  <% 3.times do |i| %>
+  <%= i+1 %>: 
+  <%= label_tag "query_sort_criteria_attribute_" + i.to_s,
+                l(:description_query_sort_criteria_attribute), :class => "hidden-for-sighted" %>
+  <%= select_tag("query[sort_criteria][#{i}][]",
+                 options_for_select([[]] + query.available_columns.select(&:sortable?).collect {|column| [column.caption, column.name.to_s]}, @query.sort_criteria_key(i)),
+                 :id => "query_sort_criteria_attribute_" + i.to_s)%>
+  <%= label_tag "query_sort_criteria_direction_" + i.to_s,
+                l(:description_query_sort_criteria_direction), :class => "hidden-for-sighted" %>
+  <%= select_tag("query[sort_criteria][#{i}][]",
+                  options_for_select([[], [l(:label_ascending), 'asc'], [l(:label_descending), 'desc']], @query.sort_criteria_order(i)),
+                  :id => "query_sort_criteria_direction_" + i.to_s) %>
+  <br />
+  <% end %>
+  </fieldset>
+
+
+  <%= content_tag 'fieldset', :id => 'columns', :style => (query.has_default_columns? ? 'display:none;' : nil) do %>
+  <legend><%= l(:field_column_names) %></legend>
+  <%= render_query_columns_selection(query) %>
+  <% end %>
+
+  </div>
+
+<%= javascript_tag do %>
+$(document).ready(function(){
+  $("input[name='query[visibility]']").change(function(){
+    var checked = $('#query_visibility_1').is(':checked');
+    $("input[name='query[role_ids][]'][type=checkbox]").attr('disabled', !checked);
+  }).trigger('change');
+});
+<% end %>

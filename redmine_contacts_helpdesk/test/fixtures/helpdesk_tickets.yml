@@ -1,0 +1,25 @@
+ticket001:
+  id: 1
+  contact_id: 1
+  issue_id: 1
+  from_address: "test1@mail.address"
+  ticket_date: <%= 10.days.ago.to_s(:db) %>
+  source: <%= HelpdeskTicket::HELPDESK_EMAIL_SOURCE %>
+  is_incoming: true
+  reaction_time: 13521
+ticket002:
+  id: 2
+  contact_id: 2
+  issue_id: 2
+  from_address: "test2@mail.address"
+  ticket_date: <%= 100.days.ago.to_s(:db) %>
+  source: <%= HelpdeskTicket::HELPDESK_EMAIL_SOURCE %>
+  is_incoming: true
+ticket003:
+  id: 3
+  contact_id: 1
+  issue_id: 5
+  from_address: "test1@mail.address"
+  ticket_date: <%= 2.hours.ago.to_s(:db) %>
+  source: <%= HelpdeskTicket::HELPDESK_EMAIL_SOURCE %>
+  is_incoming: false

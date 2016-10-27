@@ -1,0 +1,25 @@
+<%
+  puts "Loading products..."
+
+  names = %w(CRM Invoices Helpdesk People Finance Questions)
+  currencies = %w(USD EUR GBP RUB)
+  codes = %w(001 002 003 004 005 006)
+  projects = EnabledModule.where(:name => 'products').map(&:project).flatten
+  tags = %w(new plugin test active free)
+
+  for i in (0 .. 5) do
+%>
+product_<%= i %>:
+  id          : <%= i + 1 %>
+  code        : <%= codes[i] %>
+  name        : <%= name = names[i] %> # name has a limit of 64 characters.
+  author_id   : <%= User.all[rand(User.all.count)].id %>
+  status_id   : <%= (rand(2) + 1) %>
+  project_id  : <%= projects[rand(projects.count)].id %>
+  price       : <%= rand(100) + 99 %>
+  currency    : <%= currencies[rand(4)] %> # name has a limit of 64 characters.
+  amount      : <%= rand(8) %>
+  created_at  : <%= created_at = (rand(60) + 2).days.ago + rand(600).minutes; created_at.to_s(:db) %>
+  updated_at  : <%= (created_at + rand(36_000).seconds).to_s(:db) %>
+  description : This is a product <%= name %> description
+<% end %>

@@ -1,0 +1,69 @@
+# Spanish strings go here for Rails i18n
+es:
+  label_product: Producto
+  label_product_plural: Productos
+  label_products_code: Código
+  label_products_price: Precio
+  label_products_status: Estado
+  label_products_description: Descripción
+  label_products_name: Nombre
+  label_products_status_active: Activo
+  label_products_status_inactive: Inactivo
+  label_products_new: Nuevo producto
+  label_products_edit: Editar producto
+  label_products_line_tax: Impuesto
+  label_products_line_discount: Descuento
+  label_order: Pedido
+  label_order_plural: Pedidos
+  label_products_quantity: Cantidad
+  label_products_total: Total
+  label_products_order_date: Fecha del pedido
+  label_products_closed_date: Fecha de cierre
+  label_products_order_lines: Líneas del pedido
+  label_products_order_placed: Nuevo pedido realizado
+  label_products_product_created: Nuevo producto creado
+  label_products_number: Número
+  label_products_currency: Moneda
+  label_products_amount: Importe
+  label_products_order_new: Nuevo pedido
+  label_products_order_edit: Editar pedido
+  label_products_order_status_plural: Estados de los pedidos
+  label_products_order_status_new: Nuevo estado de pedido
+  label_products_order_subject: Asunto
+  label_products_order_unit_price: Precio unitario
+  label_products_show_in_lines: Mostrar en las líneas
+  label_products_show_in_top_menu: Mostrar en el menú superior
+  label_products_show_in_app_menu: Mostrar en el menú de la aplicación
+  label_products_default_currency: Moneda por defecto
+  label_products_cross_project_contacts: Contactos de diferentes proyectos
+  label_products_select_companies: Seleccionar compañías
+  label_products_order_last_number: 'El último número de pedido fue #%{number}'
+  label_products_order_internal: Pedido interno
+  label_products_order_status_closed: Cerrado
+  label_products_ordered: Pedido
+  label_products_image: Imagen
+  label_products_recent: Productos recientes
+  label_products_orders_recent: Pedidos recientes
+  error_products_unable_delete_order_status: No es posible eliminar el estado del pedido.
+  label_products_add_line: Añadir línea
+  label_attribute_of_product: "%{name} del producto"
+  label_attribute_of_lines: "%{name} de la línea del producto"
+  text_products_order_added: "El pedido %{number} has sido creado por %{author}."
+  text_products_order_updated: "El pedido %{number} ha sido actualizado por %{author}."
+  text_products_order_status_changed: "Estado del pedido, cambiado de %{old} a %{new}"
+  text_products_order_amount_changed: "Importe del pedido, cambiado de %{old} a %{new}"
+  label_products_select: Seleccione producto
+  label_products_item: Item
+  label_products_subtotal: Subtotal
+  label_products_tax_total: Importe de los impuestos
+  label_products_units_total: Unidades totales
+  label_products_add: Añadir producto
+  label_products_order_added: Pedido añadido
+  label_products_order_updated: Pedido actualizado
+  label_products_order_comment_added: Comentario añadido al pedido
+  label_products_add_description: añadir descripción
+  label_products_search_for_products: Buscar productos para añadir
+  label_products_add_product_plural: Añadir productos
+  label_products_search_for_product: Buscar producto
+
+  permission_manage_product_relations: Gestionar relaciones de productos

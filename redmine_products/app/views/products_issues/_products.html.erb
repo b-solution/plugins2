@@ -1,0 +1,8 @@
+<% if issue && User.current.allowed_to?(:view_products, nil, :global => true) && issue.products.visible.any? %>
+  <style>
+    div.issue table span.product  img.gravatar {float: none;}
+  </style>
+  <%= issue_fields_rows do |rows|
+    rows.left l(:label_product_plural), issue.products.visible.map{|p| product_tag(p)}.join(', ').html_safe
+  end %>
+<% end %>

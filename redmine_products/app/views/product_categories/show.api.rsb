@@ -1,0 +1,6 @@
+api.product_category do
+  api.id @category.id
+  api.code @category.code
+  api.name @category.name
+  api.parent(:id => @category.parent_id, :code =>  @category.parent.code, :name => @category.parent.name) unless @category.parent.blank?
+end

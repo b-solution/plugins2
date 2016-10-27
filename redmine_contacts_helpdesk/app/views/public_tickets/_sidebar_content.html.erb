@@ -1,0 +1,19 @@
+<% html_title "#{@issue.tracker.name} ##{@issue.id}: #{@issue.subject}" %>
+
+<% if (RedmineHelpdesk.public_spent_time? && @total_spent_hours.to_i > 0) || !@previous_tickets.blank? %>
+  <% content_for :sidebar do %>
+    <% if RedmineHelpdesk.public_spent_time? && @total_spent_hours.to_i > 0 %>
+    <h3><%= l(:label_spent_time) %></h3>
+    <p><span class="icon icon-time"><%= l_hours(@total_spent_hours) %></span></p>
+    <% end %>
+
+    <% unless @previous_tickets.empty? %>
+      <h3>
+        <%= l(:label_helpdesk_previous_tickets) %>
+      </h3>
+      <% @previous_tickets.each do |previous_ticket| %>
+        <p><%= link_to "##{previous_ticket.id} - #{previous_ticket.subject} (#{previous_ticket.status.name})", public_ticket_path(previous_ticket.helpdesk_ticket, :hash => previous_ticket.helpdesk_ticket.token), :class => previous_ticket.css_classes %></p>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

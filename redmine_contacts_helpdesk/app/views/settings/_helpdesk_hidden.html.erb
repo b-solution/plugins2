@@ -1,0 +1,14 @@
+<p>
+  <label>Show excerpt issues list</label>
+  <%= check_box_tag 'settings[show_excerpt_tickets_list]', 1, @settings[:show_excerpt_tickets_list] %>
+</p>
+
+<p>
+  <label><%= l(:setting_plain_text_mail) %></label>
+  <%= check_box_tag 'settings[plain_text_mail]', 1, @settings[:plain_text_mail] %>
+</p>
+
+<p>
+  <label>Do not strip HTML tags</label>
+  <%= check_box_tag 'settings[helpdesk_do_not_strip_tags]', 1, @settings[:helpdesk_do_not_strip_tags] %>
+</p>

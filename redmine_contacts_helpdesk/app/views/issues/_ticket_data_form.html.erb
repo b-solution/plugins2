@@ -1,0 +1,26 @@
+<% if @issue.new_record? && !@copy_from && User.current.allowed_to?(:edit_helpdesk_tickets, @project) && (@issue.tracker_id.to_s == HelpdeskSettings[:helpdesk_tracker, @project.id] || HelpdeskSettings[:helpdesk_tracker, @project.id] == 'all') %>
+  <div class="email-template">
+  <% @issue.build_helpdesk_ticket if @issue.helpdesk_ticket.blank? %>
+  <%= form.fields_for :helpdesk_ticket do |f| %>
+    <div class="splitcontentleft">
+      <p><%= f.label_for_field("issue_helpdesk_ticket_attributes_contact_id_selected_contact", :label => l(:label_helpdesk_customer), :required => true) %>
+        <%= select_contact_tag('issue[helpdesk_ticket_attributes][contact_id]', @issue.helpdesk_ticket.try(:customer), :is_select => Contact.visible.by_project(ContactsSetting.cross_project_contacts? ? nil : @project).count < 50, :include_blank => true, :add_contact => true, :display_field => @issue.helpdesk_ticket.try(:customer).blank?) %>
+      </p>
+
+      <p class="required">
+        <%= f.text_field :ticket_date, :label => l(:label_helpdesk_ticket_date), :size => 12, :value => @issue.helpdesk_ticket.ticket_date.to_date %>
+        <%= f.text_field :ticket_time, :size => 5, :no_label => true, :value => @issue.helpdesk_ticket.ticket_date.to_s(:time) %><%= calendar_for('issue_helpdesk_ticket_attributes_ticket_date') %>
+      </p>
+    </div>
+
+    <div class="splitcontentright">
+      <p><%= f.select :source, helpdesk_tickets_source_for_select, :label => l(:label_helpdesk_ticket_source) %></p>
+      <p><%= label_tag :helpdesk_send_as,  l(:label_helpdesk_send_as)%>
+         <%= select_tag :helpdesk_send_as, options_for_select(helpdesk_send_as_for_select, params[:helpdesk_send_as]) %> </p>
+    </div>
+
+    <div style="clear:both;"></div>
+  <% end %>
+  </div>
+
+<% end %>

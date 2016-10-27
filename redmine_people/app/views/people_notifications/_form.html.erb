@@ -1,0 +1,26 @@
+<%= error_messages_for @note %>
+<p>
+  <%= f.text_area :description, :cols => 80, :rows => 15, :required => true, :class => 'wiki-edit', :id => 'notification_description' %>
+  <%= wikitoolbar_for 'notification_description' %>
+</p>
+<p>
+  <%= f.select :frequency, PeopleNotification::FREQUENCY.map{ |fq| [l("frequency_#{fq}"),fq] } %>
+</p>
+<p>
+  <%= f.text_field :start_date, :class => 'datepicker' %>
+  <%= calendar_for('people_notification_start_date') %>
+</p>
+<p>
+  <%= f.text_field :end_date, :required => true %>
+  <%= calendar_for('people_notification_end_date') %>
+</p>
+<p>
+  <%= f.check_box :active %>
+</p>
+<p>
+  <%= f.select :kind, PeopleNotification::KIND.map{ |k| [l("notification_kind_#{k}"),k] }, :include_blank => true %>
+</p>
+<fieldset>
+  <legend><%= l(:label_attachment_plural) %></legend>
+  <p><%= render :partial => 'attachments/form', :locals => {:container => f.object} %></p>
+</fieldset>

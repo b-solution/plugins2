@@ -1,0 +1,9 @@
+<% products_tabs = [{:name => 'general', :partial => 'settings/products/general', :label => :label_general},
+        {:name => 'order_statuses', :partial => 'settings/products/order_statuses', :label => :label_products_order_status_plural},
+        {:name => 'product_categories', :partial => 'settings/products/product_categories', :label => :label_products_category_plural}
+        ]   %>
+
+<%= render_tabs products_tabs %>
+
+<% html_title(l(:label_settings), l(:label_product_plural)) -%>
+

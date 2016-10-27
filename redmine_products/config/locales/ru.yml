@@ -1,0 +1,97 @@
+# Russian strings go here for Rails i18n
+ru:
+  label_product: Продукт
+  label_product_plural: Продукты
+  label_products_code: Код
+  label_products_price: Цена
+  label_products_status: Статус
+  label_products_description: Описание
+  label_products_name: Наименование
+  label_products_status_active: Активный
+  label_products_status_inactive: Не активный
+  label_products_new: Новый продукт
+  label_products_edit: Редактировать продукт
+  label_products_line_tax: Налог
+  label_products_line_discount: Скидка
+  label_order: Заказ
+  label_order_plural: Заказы
+  label_products_quantity: Кол-во
+  label_products_total: Итого
+  label_products_order_date: Дата заказа
+  label_products_closed_date: Дата закрытия
+  label_products_order_lines: Строки заказа
+  label_products_order_placed: Новый задаз размещен
+  label_products_product_created: Новый продукт создан
+  label_products_number: Номер
+  label_products_currency: Валюта
+  label_products_amount: Сумма
+  label_products_order_new: Новый заказ
+  label_products_order_edit: Редактировать заказ
+  label_products_order_status_plural: Статусы заказа
+  label_products_order_status_new: Новый статус заказа
+  label_products_order_subject: Тема
+  label_products_order_unit_price: Цена
+  label_products_show_in_lines: Показывать в строках
+  label_products_show_in_top_menu: Показывать в верхнем меню
+  label_products_show_in_app_menu: Показывать в меню приложения
+  label_products_default_currency: Валюта по умолчанию
+  label_products_cross_project_contacts: Разрешить контакты из других проектов
+  label_products_select_companies: Клиенты только компании
+  label_products_order_last_number: 'Номер последнего заказа #%{number}'
+  label_products_order_internal: Внутренний заказ
+  label_products_order_status_closed: Закрытый
+  label_products_ordered: Заказов
+  label_products_image: Изображение
+  label_products_recent: Недавние продуты
+  label_products_orders_recent: Недавние заказы
+  error_products_unable_delete_order_status: Невозможно удалить статус
+  label_products_add_line: Добавить строку
+  label_attribute_of_product: "%{name} продукта"
+  label_attribute_of_lines: "%{name} строки заказа"
+  text_products_order_added: "Заказ %{number} был создан %{author}."
+  text_products_order_updated: "Заказ %{number} был обновлен %{author}."
+  text_products_order_status_changed: "Статус заказа изменился с %{old} на %{new}"
+  text_products_order_amount_changed: "Сумма заказа изменилась с %{old} на %{new}"
+  label_products_select: Выбрать продукт
+  label_products_item: Наименование
+  label_products_subtotal: Подитог
+  label_products_tax_total: Сумма налога
+  label_products_units_total: Всего заказано
+  label_products_add: Добавить продукт
+  label_products_order_added: Заказ добавлен
+  label_products_order_updated: Заказ обновлен
+  label_products_order_comment_added: Комментарий добален к заказу
+  label_products_add_description: добавить описание
+  label_products_search_for_products: Искать продукты
+  label_products_add_product_plural: Добавить продукты
+  label_products_search_for_product: Искать продукт
+  label_products_create_invoice: Создать счет
+
+  permission_manage_product_relations: Управлять связями продуктов
+
+  #1.1.0
+  label_products_category: Категория
+  label_products_category_plural: Категории
+  label_products_is_bundle: Пакет
+  label_product_category_new: Новая категория
+  label_products_parent: Родитель
+  label_products_category_filter: Категория продукта
+
+  #1.1.1
+  project_module_products: Продукты
+  project_module_orders: Закаказы
+  permission_view_products: Просмотр продуктов
+  permission_add_products: Добавление продуктов
+  permission_edit_products: Редактирование продуктов
+  permission_delete_products: Удаление продуктов
+  permission_import_products: Импорт продуктов
+  permission_save_products_queries: Сохранение запросов
+  permission_manage_public_products_queries: Управление общими запросами
+  permission_view_orders: Просмотр заказов
+  permission_add_orders: Добавление заказов
+  permission_edit_orders: Редактирование заказов
+  permission_delete_orders: Удаление заказов
+  permission_comment_orders: Комментирование заказов
+  permission_import_orders: Импорт заказов
+  permission_save_orders_queries: Сохранение запросов
+  permission_manage_public_orders_queries: Управление общими запросами

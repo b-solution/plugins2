@@ -1,0 +1,40 @@
+api.array :orders, api_meta(:total_count => @orders_count, :offset => @offset, :limit => @limit) do
+  @orders.each do |order|
+    api.order do
+      api.id order.id
+      api.number order.number
+      api.subject order.subject
+      api.order_date order.order_date
+      api.closed_date order.closed_date
+      api.amount order.amount
+      api.currency order.currency
+      api.description order.description
+      api.contact(:id => order.contact_id, :name => order.contact.name) unless order.contact.nil?
+      api.project(:id => order.project_id, :name => order.project.name) unless order.project.nil?
+      api.status(:id => order.status_id, :name => order.status.name, :is_closed => order.status.is_closed?) unless order.status.nil?
+      api.author(:id => order.author_id, :name => order.author.name) unless order.author.nil?
+      api.assigned_to(:id => order.assigned_to_id, :name => order.assigned_to.name) unless order.assigned_to.nil?
+      render_api_custom_values order.custom_field_values, api
+
+      api.created_at order.created_at
+      api.updated_at order.updated_at
+
+      api.array :lines do
+        order.lines.each do |line|
+          api.line_attributes do
+            api.id line.id
+            api.position line.position
+            api.product(:id => line.product_id, :name => line.product.name) unless line.product.nil?
+            api.description line.description
+            api.quantity line.quantity
+            api.tax line.tax
+            api.discount line.discount
+            api.price line.price
+            api.total line.total
+          end
+        end
+      end if include_in_api_response?('lines') && order.lines.present?
+
+    end
+  end
+end

@@ -1,0 +1,4 @@
+<h4><%= l(label) %></h4>
+<% collection.each do |person| %>
+  <%= render :partial => 'person_card', :locals => { :person_data => person } %>
+<% end %>

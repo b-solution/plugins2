@@ -1,0 +1,12 @@
+<% new_id = Time.now.to_i + rand(100) %>
+<% content = fields_for(:invoice, Invoice.new){|f| f.fields_for(:lines, InvoiceLine.new, :child_index => new_id){|builder|
+  render("invoices/line_fields", :f => builder)}} %>
+
+$('#sortable tr').last().after('<%= escape_javascript content %>')
+$('#invoice_lines_attributes_<%= new_id %>_description').val("<%= @product.name %>");
+$('#invoice_lines_attributes_<%= new_id %>_price').val("<%= @product.price %>");
+$('#invoice_lines_attributes_<%= new_id %>_units').val("products");
+if ($('#invoice_lines_attributes_<%= new_id %>_quantity').val() == 0) {$('#invoice_lines_attributes_<%= new_id %>_quantity').val("1");}
+updateInvoiceTotal();
+$('#new_product_code').val('');
+$('#invoice_lines_attributes_<%= new_id %>_quantity').focus();

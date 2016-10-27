@@ -1,0 +1,30 @@
+<h2><%= l(:label_helpdesk_canned_response_plural) %></h2>
+
+<% if @canned_responses.any? %>
+  <table class="list">
+    <thead><tr>
+    <th><%= l(:field_name) %></th>
+    <th><%= l(:field_content) %></th>
+    <th><%= l(:field_is_public) %></th>
+    <th><%= l(:field_project) %></th>
+    <th></th>
+    </tr></thead>
+    <tbody>
+    <% @canned_responses.each do |canned_response| %>
+    <tr class="<%= cycle 'odd', 'even' %>">
+      <td class="name"><%= canned_response.name  %></td>
+      <td class="name"><em class="info"><%= canned_response.content.gsub(/$/, ' ').truncate(250) %></em></td>
+      <td class="tick"><%= checked_image canned_response.is_public? %></td>
+      <td class="project"><%= canned_response.project ? canned_response.project.name : l(:field_is_for_all) %></td>
+      <td class="buttons">
+        <%= link_to l(:button_edit), edit_canned_response_path(canned_response), :class => 'icon icon-edit' %>
+        <%= delete_link canned_response_path(canned_response, :project_id => canned_response.project) %>
+      </td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <p class="pagination"><%= pagination_links_full @canned_response_pages %></p>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>

@@ -1,0 +1,82 @@
+<div class="contextual">
+<%= link_to  l(:label_products_order_new), new_project_order_path( @project, :product_ids =>  [@product.id]), :class => 'icon icon-order-add' if User.current.allowed_to?(:add_orders, @project) %>
+	<%= link_to l(:button_edit), edit_product_path(@product), :class => 'icon icon-edit' if User.current.allowed_to?(:edit_products, @project) %>
+	<%= link_to l(:button_delete), product_path(@product), :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' if User.current.allowed_to?(:delete_products, @project) %>
+</div>
+
+<h2><%= "#{l(:label_product)} ##{@product.id}" %></h2>
+
+<div class="product issue details">
+
+  <table class="subject_header">
+    <tr>
+      <% if @product.image %>
+      <td class="avatar"><%= product_image_tag(@product, :size => 128, :full_size => true) %></td>
+      <% end %>
+      <td class="name" style="vertical-align: top;">
+        <h3>
+          <%= @product.name %>
+          <% if @product.is_inactive? %>
+            <span class="private" style="float: right;"><%= l(:label_products_status_inactive) %></span>
+          <% end %>
+        </h3>
+        <p class="author">
+        <%= authoring @product.created_at, @product.author %>.
+        <% if @product.created_at != @product.updated_at %>
+        <%= l(:label_updated_time, time_tag(@product.updated_at)).html_safe %>.
+        <% end %>
+        </p>
+        <div class="tags">
+            <%= product_tag_links(@product.tag_list) %>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+<table class="attributes product status-<%= @product.status_id %>">
+<tr>
+    <th class="code"><%=l(:label_products_code)%>:</th><td class="code"><%= @product.code %></td>
+    <th class="status"><%=l(:label_products_status)%>:</th><td class="status"><%= @product.status %></td>
+</tr>
+<tr>
+    <th class="price"><%=l(:label_products_price)%>:</th><td class="price"><%=  @product.price_to_s  %></td>
+    <% unless @product.category.blank? %>
+    <th class="category"><%=l(:label_products_category)%>:</th><td class="category"><%= product_category_tree_tag(@product) if @product.category %></td>
+    <% end %>
+</tr>
+<%= render_custom_fields_rows(@product) %>
+
+<%= call_hook(:view_products_show_details_bottom, :product => @product) %>
+</table>
+
+
+<% if @product.description? %>
+  <hr />
+	<p><strong><%=l(:label_products_description)%></strong></p>
+	<div class="wiki">
+	<%= textilizable @product, :description, :attachments => @product.attachments %>
+	</div>
+<% end %>
+<% if @product.attachments.any? %>
+  <hr />
+  <p><strong><%=l(:label_attachment_plural)%></strong></p>
+  <%= link_to_attachments @product, :thumbnails => true %>
+<% end %>
+</div>
+
+<% content_for :sidebar do %>
+    <div class="tags">
+      <h3><%= l(:label_crm_tags_plural) %></h3>
+      <%= Product.available_tags(:at_least => 1).map{|tag| product_tag_link(tag.name, :count => tag.count)}.join(' ').html_safe %>
+    </div>
+    <%= render_sidebar_crm_queries('product') %>
+
+    <%= render :partial => 'orders/recent_orders' unless @recent_orders.blank? %>
+
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag :products, :plugin => 'redmine_products' %>
+  <meta name = "format-detection" content = "telephone=no">
+<% end %>

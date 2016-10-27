@@ -1,0 +1,48 @@
+<%= form_tag({:controller => :people_settings, :action => :update, :id => '1', :tab => 'general'},
+               :method => :put, :id => "people_acl_form") do %>
+  <div class="box tabular">
+  <p>
+    <label for="settings_visibility"><%= l(:label_people_show_for_registered_users) %></label>
+    <%= hidden_field_tag 'settings[visibility]', 0, :id => nil %>
+    <%= check_box_tag 'settings[visibility]', 1, Setting.plugin_redmine_people["visibility"].to_i > 0 %>
+  </p>
+
+  <p>
+    <label for="settings_edit_own_data"><%= l(:label_people_edit_own_data) %></label>
+    <%= hidden_field_tag 'settings[edit_own_data]', 0, :id => nil %>
+    <%= check_box_tag 'settings[edit_own_data]', 1, Setting.plugin_redmine_people['edit_own_data'].to_i > 0 %>
+  </p>
+  <p>
+    <label><%= l(:label_people_default_list_style) %></label>
+    <%= select_tag 'settings[default_list_style]', options_for_select([[l(:label_people_list_excerpt), "list_excerpt"], [l(:label_people_list_list), "list"]],  RedminePeople.default_list_style ) %>
+  </p>
+
+  <p>
+    <label for="settings_hide_age"><%= l(:label_people_hide_age) %></label>
+    <%= hidden_field_tag 'settings[hide_age]', 0, :id => nil %>
+    <%= check_box_tag 'settings[hide_age]', 1, Setting.plugin_redmine_people["hide_age"].to_i > 0 %>
+  </p>
+  <p>
+    <label for="settings_use_notifications"><%= l(:label_people_use_notification) %></label>
+    <%= hidden_field_tag 'settings[use_notifications]', 0, :id => nil %>
+    <%= check_box_tag 'settings[use_notifications]', 1, Setting.plugin_redmine_people["use_notifications"].to_i > 0, :onclick => "toggleShowBirthdayNotification(this);" %>
+  </p>
+  <div id="show_birthday_notifications">
+    <p>
+      <label for="settings_show_birthday_notifications"><%= l(:label_people_show_birthday_notifications) %></label>
+      <%= hidden_field_tag 'settings[show_birthday_notifications]', 0, :id => nil %>
+      <%= check_box_tag 'settings[show_birthday_notifications]', 1, Setting.plugin_redmine_people["show_birthday_notifications"].to_i > 0 %>
+    </p>
+  </div>
+  <script type="text/javascript">
+  function toggleShowBirthdayNotification (node) {
+    if ($(node).prop("checked"))
+    $('#show_birthday_notifications').show();
+    else
+    $('#show_birthday_notifications').hide();
+  }
+  toggleShowBirthdayNotification("#settings_use_notifications");
+  </script>
+  </div>
+  <%= submit_tag l(:button_apply) %>
+<% end %>

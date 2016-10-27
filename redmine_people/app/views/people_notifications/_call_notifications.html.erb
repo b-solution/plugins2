@@ -1,0 +1,15 @@
+<div id="notification-show" style="display:none;">
+</div>
+<% if User.current.type != "AnonymousUser" && RedminePeople.use_notifications?%>
+  <script type="text/javascript">
+    $.ajax({
+      url: '<%= active_people_notifications_path %>',
+      success: function(data, status, xhr) {
+        if ( data.trim().length > 0 ){
+          $("#notification-show").html(data);
+          showModal('notification-show', '830px');
+        }
+      }
+    });
+  </script>
+<% end %>

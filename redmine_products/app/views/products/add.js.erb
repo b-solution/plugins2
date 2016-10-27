@@ -1,0 +1,7 @@
+<% new_id = Time.now.to_i + rand(100) %>
+<% content = fields_for(:order, Order.new){|f| f.fields_for(:lines, ProductLine.new(:product => @product, :quantity => 1, :price => @product.price), :child_index => new_id){|builder|
+  render("orders/line_fields", :f => builder)}} %>
+$('#sortable tr.line').last().after('<%= escape_javascript content %>')
+$('#order_lines_attributes_<%= new_id %>_quantity').focus();
+$('#new_product_code').val('');
+updateTotal();

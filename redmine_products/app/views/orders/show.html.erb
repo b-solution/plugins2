@@ -1,0 +1,109 @@
+<div class="contextual">
+  <%= watcher_link(@order, User.current) %>
+	<%= link_to l(:button_edit), edit_order_path(@order), :class => 'icon icon-edit' if User.current.allowed_to?(:edit_orders, @project) %>
+  <%= link_to l(:label_invoice_new), new_invoice_path(:project_id => Invoice.allowed_target_projects.include?(@project) ? @project : Invoice.allowed_target_projects.first, :copy_from_object => {:object_id => @order.id, :object_type => 'order'}), :class => 'icon icon-invoice-add-context' if ProductsSettings.invoices_plugin_installed? && User.current.allowed_to?(:add_invoices, nil, :global => true) %>
+  <%= link_to_if_authorized l(:button_send_mail), {:controller => 'order_mails', :action => 'send', :id => @order}, :class => 'icon icon-email' unless @order.nil? %>
+	<%= link_to l(:button_delete), order_path(@order), :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' if User.current.allowed_to?(:delete_orders, @project) %>
+</div>
+
+<h2><%= "#{l(:label_order)} ##{@order.number}" %></h2>
+
+<div class="issue order details">
+
+<div class="subject">
+<h3><%= "#{@order.contact.name + ' - ' if @order.contact}#{[@order.currency, @order.amount_to_s].join(' ')}".html_safe %></h3>
+</div>
+        <p class="author">
+        <%= authoring @order.created_at, @order.author %>.
+        <% if @order.created_at != @order.updated_at %>
+        <%= l(:label_updated_time, time_tag(@order.updated_at)).html_safe %>.
+        <% end %>
+        </p>
+
+<table class="attributes order status-<%= @order.status_id %>">
+<tr>
+    <th class="status"><%=l(:label_products_status)%>:</th><td class="status"><%= order_status_tag(@order.status) %></td>
+    <th class="order-date"><%=l(:label_products_order_date)%>:</th><td class="order-date"><%= format_time(@order.order_date) %></td>
+</tr>
+<tr>
+    <th class="contact"><%=l(:label_contact)%>:</th><td class="contact"><%= contact_tag(@order.contact) if @order.contact %></td>
+    <th class="closed-date"><%=l(:label_products_closed_date)%>:</th><td class="closed-date"><%= format_time(@order.closed_date) %></td>
+</tr>
+<tr>
+    <th class="assigned-to"><%=l(:field_assigned_to)%>:</th><td class="assigned-to"><%= avatar(@order.assigned_to, :size => "14") %><%= @order.assigned_to ? link_to_user(@order.assigned_to) : "-" %></td>
+</tr>
+<%= render_custom_fields_rows(@order) %>
+<%= call_hook(:view_orders_show_details_bottom, :order => @order) %>
+</table>
+
+
+<% if @order.description? %>
+  <hr />
+	<p><strong><%=l(:label_products_description)%></strong></p>
+	<div class="wiki">
+	<%= textilizable @order, :description, :attachments => @order.attachments %>
+	</div>
+<% end %>
+
+
+<hr />
+<p><strong><%= l(:label_products_order_lines) %></strong></p>
+<div class="order-lines">
+<%= render :partial => 'lines' %>
+</div>
+
+<%= call_hook(:view_orders_show_lines_bottom, :order => @order) %>
+<% if ProductsSettings.invoices_plugin_installed? && @invoices.any? %>
+<hr />
+<div id="invoices">
+  <%= render :partial => 'invoices', :object => @invoices %>
+</div>
+<% end %>
+
+<% if @order.attachments.any? -%>
+<hr />
+<%= link_to_attachments @order, :thumbnails => true %>
+<% end %>
+</div>
+
+
+
+<div id="comments" style="margin-bottom:16px;">
+<h3 class="comments"><%= l(:label_comment_plural) %></h3>
+<% @comments.each do |comment| %>
+    <% next if comment.new_record? %>
+    <div class="contextual">
+    <%= link_to_if_authorized image_tag('delete.png'), {:controller => 'order_comments', :action => 'destroy', :id => @order, :comment_id => comment},
+                                                       :data => {:confirm => l(:text_are_you_sure)}, :method => :delete, :title => l(:button_delete) %>
+    </div>
+    <h4><%= avatar(comment.author, :size => "24") %><%= authoring comment.created_on, comment.author %></h4>
+    <%= textilizable(comment.comments) %>
+<% end if @order.comments.any? %>
+</div>
+
+<% if User.current.allowed_to?(:comment_orders, @project) %>
+  <p><%= toggle_link l(:label_comment_add), "add_comment_form", :focus => "comment_comments" %></p>
+  <%= form_tag({:controller => 'order_comments', :action => 'create', :id => @order}, :id => "add_comment_form", :style => "display:none;") do %>
+    <div class="box">
+        <%= text_area 'comment', 'comments', :cols => 80, :rows => 15, :class => 'wiki-edit' %>
+        <%= wikitoolbar_for 'comment_comments' %>
+    </div>
+    <p><%= submit_tag l(:button_add) %></p>
+  <% end %>
+<% end %>
+
+<% content_for :sidebar do %>
+  <div class="contact-card small-card">
+    <h3><%= l(:label_contact) %></h3>
+    <%= render :partial => 'contacts/contact_card', :object => @order.contact %>
+  </div>
+  <%= render :partial => 'stat_ordered' %>
+  <%= render :partial => 'recent_orders' %>
+<% end if @order.contact %>
+
+<% html_title "#{l(:label_order)} ##{@order.number}" %>
+
+<% content_for :header_tags do %>
+	<%= stylesheet_link_tag :products, :plugin => 'redmine_products' %>
+	<meta name = "format-detection" content = "telephone=no">
+<% end %>

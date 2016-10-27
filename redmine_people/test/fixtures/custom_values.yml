@@ -1,0 +1,24 @@
+custom_values_001: 
+  customized_type: Principal
+  custom_field_id: 1
+  customized_id: 1
+  id: 1
+  value: Sitroen
+custom_values_002: 
+  customized_type: Principal
+  custom_field_id: 2
+  customized_id: 1
+  id: 2
+  value: 176
+custom_values_003: 
+  customized_type: Principal
+  custom_field_id: 1
+  customized_id: 4
+  id: 3
+  value: Volvo
+custom_values_004: 
+  customized_type: Principal
+  custom_field_id: 2
+  customized_id: 4
+  id: 4
+  value: 190

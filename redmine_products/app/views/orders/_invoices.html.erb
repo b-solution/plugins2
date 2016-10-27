@@ -1,0 +1,14 @@
+<p><strong><%=l(:label_invoice_plural)%></strong></p>
+
+<% for invoice in invoices %>
+<p><%= link_to "##{invoice.number} - #{format_date(invoice.invoice_date)}", invoice_path(invoice), :class => 'icon icon-invoice', :download => true -%>
+        <%= link_to image_tag('page_white_acrobat_context.png', :plugin => "redmine_contacts_invoices"), invoice_path(invoice, :format => 'pdf') %>
+  <span class="amount"><strong><%=  invoice.amount_to_s %></strong></span>
+  <%= " - #{invoice.subject}" unless invoice.subject.blank? %>
+  <% if invoice.contact %>
+    <span class="contact">(<%= invoice.contact.name %>)</span>
+  <% end %>
+
+  </p>
+<% end %>
+
